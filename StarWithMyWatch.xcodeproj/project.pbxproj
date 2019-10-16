@@ -32,11 +32,14 @@
 		0CBD681123574AE60060771B /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD680723574AE60060771B /* WatchListTableViewCell.swift */; };
 		0CBD681523575A9F0060771B /* AdminHomeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD681323575A9F0060771B /* AdminHomeNextViewController.swift */; };
 		0CBD681623575A9F0060771B /* AdminHomeNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD681423575A9F0060771B /* AdminHomeNextViewController.xib */; };
+		0CBD6819235777EB0060771B /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD6818235777EB0060771B /* Toast.swift */; };
+		0CBD681D2357859B0060771B /* AdminHomeRecapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD681B2357859A0060771B /* AdminHomeRecapViewController.swift */; };
+		0CBD681E2357859B0060771B /* AdminHomeRecapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD681C2357859A0060771B /* AdminHomeRecapViewController.xib */; };
+		0CBD6820235793C50060771B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD681F235793C50060771B /* User.swift */; };
 		3F44E30BE8A4BC70F83C9A85 /* Pods_StarWithMyWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */; };
 		7EC89AA594D5CB2CEB45AC78 /* Pods_StarWithMyWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */; };
 		90279D5ECB5AED729D5A258D /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */; };
 		9617521B23575B2100F43C3C /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617521A23575B2100F43C3C /* Watch.swift */; };
-		9617521E23578EB700F43C3C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617521D23578EB700F43C3C /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,10 @@
 		0CBD680723574AE60060771B /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
 		0CBD681323575A9F0060771B /* AdminHomeNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeNextViewController.swift; sourceTree = "<group>"; };
 		0CBD681423575A9F0060771B /* AdminHomeNextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHomeNextViewController.xib; sourceTree = "<group>"; };
+		0CBD6818235777EB0060771B /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		0CBD681B2357859A0060771B /* AdminHomeRecapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeRecapViewController.swift; sourceTree = "<group>"; };
+		0CBD681C2357859A0060771B /* AdminHomeRecapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHomeRecapViewController.xib; sourceTree = "<group>"; };
+		0CBD681F235793C50060771B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		25D24E8A714E382D81C1BB6D /* Pods-StarWithMyWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.release.xcconfig"; sourceTree = "<group>"; };
 		2A99F766DFC9BC735E347F47 /* Pods-StarWithMyWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +102,6 @@
 		72E1C44AAD9F27836E612CB0 /* Pods-StarWithMyWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		96023B33199D4F09A706B77D /* Pods-StarWithMyWatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		9617521A23575B2100F43C3C /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
-		9617521D23578EB700F43C3C /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		96EC8B293311D3BDF36629F0 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch_StarWithMyWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68542CD151707D3C3A697A4 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 		0CBD679B235610250060771B /* StarWithMyWatch */ = {
 			isa = PBXGroup;
 			children = (
+				0CBD6817235777C80060771B /* Tools */,
 				9617521923575B0900F43C3C /* Model */,
 				0CBD67FD23574AE60060771B /* User */,
 				0CBD67FA235749150060771B /* Services */,
@@ -165,7 +172,6 @@
 				0CBD67A8235610260060771B /* Info.plist */,
 				0CBD67CA235611010060771B /* HomeViewController.swift */,
 				0CBD67CB235611010060771B /* HomeViewController.xib */,
-				9617521D23578EB700F43C3C /* Toast.swift */,
 			);
 			path = StarWithMyWatch;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 		0CBD67CE235628A10060771B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				0CBD681A235785810060771B /* Recap */,
 				0CBD681223575A5A0060771B /* Woman */,
 				0CBD67DB2357038B0060771B /* AdminHomeViewController.swift */,
 				0CBD67DC2357038B0060771B /* AdminHomeViewController.xib */,
@@ -235,6 +242,23 @@
 			path = Woman;
 			sourceTree = "<group>";
 		};
+		0CBD6817235777C80060771B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0CBD6818235777EB0060771B /* Toast.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0CBD681A235785810060771B /* Recap */ = {
+			isa = PBXGroup;
+			children = (
+				0CBD681B2357859A0060771B /* AdminHomeRecapViewController.swift */,
+				0CBD681C2357859A0060771B /* AdminHomeRecapViewController.xib */,
+			);
+			path = Recap;
+			sourceTree = "<group>";
+		};
 		375DDC3C877A807E91A7BD6E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				9617521A23575B2100F43C3C /* Watch.swift */,
+				0CBD681F235793C50060771B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +406,7 @@
 				0CBD67A7235610260060771B /* LaunchScreen.storyboard in Resources */,
 				0CBD680F23574AE60060771B /* WatchListTableViewCell.xib in Resources */,
 				0CBD67A4235610260060771B /* Assets.xcassets in Resources */,
+				0CBD681E2357859B0060771B /* AdminHomeRecapViewController.xib in Resources */,
 				0CBD67CD235611010060771B /* HomeViewController.xib in Resources */,
 				0CBD681023574AE60060771B /* WatchDetailViewController.xib in Resources */,
 				0CBD67DE2357038B0060771B /* AdminHomeViewController.xib in Resources */,
@@ -517,8 +543,10 @@
 				9617521B23575B2100F43C3C /* Watch.swift in Sources */,
 				0CBD679D235610250060771B /* AppDelegate.swift in Sources */,
 				0CBD67CC235611010060771B /* HomeViewController.swift in Sources */,
+				0CBD6820235793C50060771B /* User.swift in Sources */,
 				0CBD680D23574AE60060771B /* TableViewController.swift in Sources */,
 				0CBD681523575A9F0060771B /* AdminHomeNextViewController.swift in Sources */,
+				0CBD681D2357859B0060771B /* AdminHomeRecapViewController.swift in Sources */,
 				0CBD67E1235704A70060771B /* AdminHomeCollectionViewCell.swift in Sources */,
 				0CBD67DD2357038B0060771B /* AdminHomeViewController.swift in Sources */,
 				0CBD67FC235749150060771B /* WatchService.swift in Sources */,
@@ -526,7 +554,7 @@
 				0CBD680A23574AE60060771B /* WatchListViewController.swift in Sources */,
 				0CBD680923574AE60060771B /* OrderViewController.swift in Sources */,
 				0CBD681123574AE60060771B /* WatchListTableViewCell.swift in Sources */,
-				9617521E23578EB700F43C3C /* Toast.swift in Sources */,
+				0CBD6819235777EB0060771B /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

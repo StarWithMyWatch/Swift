@@ -69,6 +69,36 @@ public class WatchService {
             
             
         }
-}
+    }
+    
+    public func getPhotosMan(completion: @escaping ([User]) -> Void) {
+        
+        Alamofire.request("https://demo2421622.mockable.io/homme").responseJSON { (res) in
+            
+            guard let result = res.value as? [String:Any],
+                let events = result["users"] as? [[String:Any]] else  { return }
+            let eventsResult = events.compactMap({ (elem) -> User? in
+                return User(json: elem)
+            })
+            completion(eventsResult)
+            
+            
+        }
+    }
+    
+    public func getPhotosWoman(completion: @escaping ([User]) -> Void) {
+        
+        Alamofire.request("https://demo2421622.mockable.io/femme").responseJSON { (res) in
+            
+            guard let result = res.value as? [String:Any],
+                let events = result["users"] as? [[String:Any]] else  { return }
+            let eventsResult = events.compactMap({ (elem) -> User? in
+                return User(json: elem)
+            })
+            completion(eventsResult)
+            
+            
+        }
+    }
 
 }

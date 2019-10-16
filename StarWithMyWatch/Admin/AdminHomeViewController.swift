@@ -15,9 +15,14 @@ class AdminHomeViewController: UIViewController {
     
     var doubletapped = false
     var longPressure = false
+    var choosenList : [String] = []
+    var usersMen : [User] = []
+    var usersWomen : [User] = []
     
-    class func newInstance() -> AdminHomeViewController {
+    class func newInstance(usersMan : [User], usersWoman : [User]) -> AdminHomeViewController {
         let ahvc = AdminHomeViewController()
+        ahvc.usersMen = usersMan
+        ahvc.usersWomen = usersWoman
         return ahvc
     }
     
@@ -34,17 +39,20 @@ class AdminHomeViewController: UIViewController {
         adminHomeCollectionView.addGestureRecognizer(tap)
         
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(gesture:)))
-        lpgr.minimumPressDuration = 1.0
+        lpgr.minimumPressDuration = 0.5
         adminHomeCollectionView.addGestureRecognizer(lpgr)
         
         
         // Do any additional setup after loading the view.
     }
 
-    @objc func doubleTapped(gesture: UILongPressGestureRecognizer!) {
+    @objc func doubleTapped(gesture: UITapGestureRecognizer!) {
         let p = gesture.location(in: self.adminHomeCollectionView)
         if let indexPath = self.adminHomeCollectionView.indexPathForItem(at: p) {
             doubletapped = true
+            if(choosenList.count == 2) {
+                Toast.show(message: "Vous avez atteint le nombre max de séléctions femmes\nPassez à la page suivante", controller: self)
+            }
             adminHomeCollectionView.reloadItems(at: [indexPath])
         } else {
             print("no index path")
@@ -62,8 +70,13 @@ class AdminHomeViewController: UIViewController {
     }
     
     @objc func nextPageWoman() {
-        let next = AdminHomeNextViewController.newInstance()
-        self.navigationController?.pushViewController(next, animated: true)
+        if(choosenList.count == 2){
+            let next = AdminHomeNextViewController.newInstance(usersMenChoosen : self.choosenList, usersWomen : usersWomen)
+            self.navigationController?.pushViewController(next, animated: true)
+        } else {
+            Toast.show(message: "Vous devez au moins choisir 2 photos", controller: self)
+        }
+        
     }
 }
 
@@ -76,19 +89,42 @@ extension AdminHomeViewController: UICollectionViewDataSource {
     public static let adminCellId = "ADMIN_CELL_ID"
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return usersMen.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdminHomeViewController.adminCellId, for: indexPath) as! AdminHomeCollectionViewCell
-        if(doubletapped){
-            cell.imageLike.image = UIImage(named: "coeurPNG")
-            doubletapped = false
+        let urlImage = URL(string: usersMen[indexPath.row].image)
+        let imageData = try! Data(contentsOf: urlImage!)
+        cell.image.image = UIImage(data: imageData)
+        if(choosenList.count < 2) {
+            if(doubletapped){
+                cell.imageLike.image = UIImage(named: "coeurRouge")
+                doubletapped = false
+                if(!choosenList.contains(usersMen[indexPath.row]._id)){
+                    choosenList.append(usersMen[indexPath.row]._id)
+                }
+            }
+            if(longPressure){
+                cell.imageLike.image = nil
+                longPressure = false
+                choosenList.removeAll { (e) -> Bool in
+                    return e == usersMen[indexPath.row]._id
+                }
+            }
+            print(choosenList)
+        } else if (choosenList.count == 2) {
+            if(longPressure){
+                cell.imageLike.image = nil
+                longPressure = false
+                choosenList.removeAll { (e) -> Bool in
+                    return e == usersMen[indexPath.row]._id
+                }
+            }
+        } else {
+            Toast.show(message: "Erreur", controller: self)
         }
-        if(longPressure){
-            cell.imageLike.image = nil
-            longPressure = false
-        }
+        
         
         //setupCell(indexPath: indexPath, cell: cell)
         return cell
