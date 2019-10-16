@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdminHomeViewController" customModule="StarWithMyWatch" customModuleProvider="target">
             <connections>
                 <outlet property="adminHomeCollectionView" destination="Fax-pG-u5E" id="qFE-ye-07v"/>
-                <outlet property="adminHomeTabBar" destination="MEw-gq-Sap" id="Hlc-eU-WNi"/>
+                <outlet property="titleLabel" destination="0lv-Tl-f2U" id="hi0-yc-bRy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,19 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEw-gq-Sap">
-                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="twR-jQ-tKf"/>
-                    </constraints>
-                    <items>
-                        <tabBarItem systemItem="favorites" id="uHE-7D-yZJ"/>
-                        <tabBarItem systemItem="more" id="3ob-TZ-GGx"/>
-                    </items>
-                </tabBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Fax-pG-u5E">
-                    <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                    <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JaP-zE-tNP">
                         <size key="itemSize" width="100" height="100"/>
@@ -43,16 +32,23 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lv-Tl-f2U">
+                    <rect key="frame" x="0.0" y="54" width="414" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fax-pG-u5E" secondAttribute="trailing" id="4A6-cM-E3W"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MEw-gq-Sap" secondAttribute="bottom" id="BN1-fe-Xfd"/>
-                <constraint firstItem="MEw-gq-Sap" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DkB-S2-I3J"/>
-                <constraint firstItem="Fax-pG-u5E" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="N7Q-Ne-jx1"/>
-                <constraint firstItem="Fax-pG-u5E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XFx-ZH-fnK"/>
-                <constraint firstItem="MEw-gq-Sap" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bao-EG-VuR"/>
-                <constraint firstItem="MEw-gq-Sap" firstAttribute="top" secondItem="Fax-pG-u5E" secondAttribute="bottom" id="vUZ-Y3-PJ1"/>
+                <constraint firstItem="Fax-pG-u5E" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="0SH-dn-rgI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0lv-Tl-f2U" secondAttribute="trailing" id="93z-Qv-cHP"/>
+                <constraint firstItem="0lv-Tl-f2U" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P0h-RF-WfE"/>
+                <constraint firstItem="0lv-Tl-f2U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Pnw-dw-c5C"/>
+                <constraint firstItem="Fax-pG-u5E" firstAttribute="top" secondItem="0lv-Tl-f2U" secondAttribute="bottom" constant="20" id="axH-4k-zLO"/>
+                <constraint firstItem="0lv-Tl-f2U" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="gxu-pU-KRk"/>
+                <constraint firstItem="Fax-pG-u5E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iAc-rd-Mzg"/>
+                <constraint firstItem="Fax-pG-u5E" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ydO-lf-imV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

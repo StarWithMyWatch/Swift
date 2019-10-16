@@ -11,7 +11,7 @@ import UIKit
 class AdminHomeViewController: UIViewController {
 
     @IBOutlet weak var adminHomeCollectionView: UICollectionView!
-    @IBOutlet weak var adminHomeTabBar: UITabBar!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var doubletapped = false
     var longPressure = false
@@ -23,6 +23,8 @@ class AdminHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = "Sélection Femme"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Suivant", style: .done, target: self, action: #selector(nextPageWoman))
         self.adminHomeCollectionView.delegate = self
         self.adminHomeCollectionView.dataSource = self
         self.adminHomeCollectionView.register(UINib(nibName: "AdminHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AdminHomeViewController.adminCellId)
@@ -57,6 +59,11 @@ class AdminHomeViewController: UIViewController {
         } else {
             print("no index path")
         }
+    }
+    
+    @objc func nextPageWoman() {
+        let next = AdminHomeNextViewController.newInstance()
+        self.navigationController?.pushViewController(next, animated: true)
     }
 }
 

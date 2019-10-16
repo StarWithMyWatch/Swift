@@ -30,6 +30,8 @@
 		0CBD680F23574AE60060771B /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680523574AE60060771B /* WatchListTableViewCell.xib */; };
 		0CBD681023574AE60060771B /* WatchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680623574AE60060771B /* WatchDetailViewController.xib */; };
 		0CBD681123574AE60060771B /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD680723574AE60060771B /* WatchListTableViewCell.swift */; };
+		0CBD681523575A9F0060771B /* AdminHomeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD681323575A9F0060771B /* AdminHomeNextViewController.swift */; };
+		0CBD681623575A9F0060771B /* AdminHomeNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD681423575A9F0060771B /* AdminHomeNextViewController.xib */; };
 		3F44E30BE8A4BC70F83C9A85 /* Pods_StarWithMyWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */; };
 		7EC89AA594D5CB2CEB45AC78 /* Pods_StarWithMyWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */; };
 		90279D5ECB5AED729D5A258D /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */; };
@@ -82,6 +84,8 @@
 		0CBD680523574AE60060771B /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
 		0CBD680623574AE60060771B /* WatchDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WatchDetailViewController.xib; sourceTree = "<group>"; };
 		0CBD680723574AE60060771B /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
+		0CBD681323575A9F0060771B /* AdminHomeNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeNextViewController.swift; sourceTree = "<group>"; };
+		0CBD681423575A9F0060771B /* AdminHomeNextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHomeNextViewController.xib; sourceTree = "<group>"; };
 		25D24E8A714E382D81C1BB6D /* Pods-StarWithMyWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.release.xcconfig"; sourceTree = "<group>"; };
 		2A99F766DFC9BC735E347F47 /* Pods-StarWithMyWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +185,7 @@
 		0CBD67CE235628A10060771B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				0CBD681223575A5A0060771B /* Woman */,
 				0CBD67DB2357038B0060771B /* AdminHomeViewController.swift */,
 				0CBD67DC2357038B0060771B /* AdminHomeViewController.xib */,
 				0CBD67DF235704A70060771B /* AdminHomeCollectionViewCell.swift */,
@@ -214,6 +219,15 @@
 			name = User;
 			path = StarWithMyWatch/User;
 			sourceTree = SOURCE_ROOT;
+		};
+		0CBD681223575A5A0060771B /* Woman */ = {
+			isa = PBXGroup;
+			children = (
+				0CBD681323575A9F0060771B /* AdminHomeNextViewController.swift */,
+				0CBD681423575A9F0060771B /* AdminHomeNextViewController.xib */,
+			);
+			path = Woman;
+			sourceTree = "<group>";
 		};
 		375DDC3C877A807E91A7BD6E /* Pods */ = {
 			isa = PBXGroup;
@@ -357,6 +371,7 @@
 				0CBD681023574AE60060771B /* WatchDetailViewController.xib in Resources */,
 				0CBD67DE2357038B0060771B /* AdminHomeViewController.xib in Resources */,
 				0CBD680E23574AE60060771B /* TableViewController.xib in Resources */,
+				0CBD681623575A9F0060771B /* AdminHomeNextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +503,7 @@
 				0CBD679D235610250060771B /* AppDelegate.swift in Sources */,
 				0CBD67CC235611010060771B /* HomeViewController.swift in Sources */,
 				0CBD680D23574AE60060771B /* TableViewController.swift in Sources */,
+				0CBD681523575A9F0060771B /* AdminHomeNextViewController.swift in Sources */,
 				0CBD67E1235704A70060771B /* AdminHomeCollectionViewCell.swift in Sources */,
 				0CBD67DD2357038B0060771B /* AdminHomeViewController.swift in Sources */,
 				0CBD67FC235749150060771B /* WatchService.swift in Sources */,
