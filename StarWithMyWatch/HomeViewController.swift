@@ -10,13 +10,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var identifiantTextField: UITextField!
+    @IBOutlet weak var mdpTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnSeConnecter(_ sender: UIButton) {
+        let next = AdminHomeViewController.newInstance()
+        self.navigationController?.pushViewController(next, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
