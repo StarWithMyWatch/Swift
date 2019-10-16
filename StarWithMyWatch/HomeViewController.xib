@@ -43,12 +43,9 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAV-RK-MS7">
                     <rect key="frame" x="161" y="596" width="92" height="30"/>
-                    <state key="normal" title="Se connecter">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
+                    <state key="normal" title="Se connecter"/>
                     <connections>
-                        <action selector="connectButton:" destination="-1" eventType="touchUpInside" id="08V-4H-8cA"/>
-
+                        <action selector="btnSeConnecter:" destination="-1" eventType="touchUpInside" id="nYH-jq-cZr"/>
                     </connections>
                 </button>
             </subviews>

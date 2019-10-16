@@ -26,7 +26,7 @@ public class EventService {
         return self.baseurl;
     }
     
-    public func getEvents(completion: @escaping ([Event]) -> Void) {
+    /*public func getEvents(completion: @escaping ([Event]) -> Void) {
         Alamofire.request(baseurl + "/", headers: headers).responseJSON { (res) in
             guard let result = res.value as? [String:Any],
                 let events = result["events"] as? [[String:Any]] else { return }
@@ -35,5 +35,5 @@ public class EventService {
             })
             completion(eventsResult)
         }
-    }
+    }*/
 }
