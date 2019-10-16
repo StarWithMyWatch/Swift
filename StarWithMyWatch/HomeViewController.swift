@@ -16,7 +16,11 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func connectButton(_ sender: Any) {
+        let push = WatchListViewController.newInstance()
+        self.navigationController?.pushViewController(push, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
