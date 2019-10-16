@@ -8,7 +8,6 @@ target 'StarWithMyWatch' do
   # Pods for StarWithMyWatch
   pod 'Alamofire'
 
-
   target 'StarWithMyWatchTests' do
     inherit! :search_paths
     # Pods for testing

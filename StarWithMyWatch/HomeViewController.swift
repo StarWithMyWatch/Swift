@@ -10,15 +10,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var identifiantTextField: UITextField!
+    @IBOutlet weak var mdpTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+
     @IBAction func connectButton(_ sender: Any) {
         let push = WatchListViewController.newInstance()
         self.navigationController?.pushViewController(push, animated: true)
+
+    @IBAction func btnSeConnecter(_ sender: UIButton) {
+        let next = AdminHomeViewController.newInstance()
+        self.navigationController?.pushViewController(next, animated: true)
+
     }
     
     /*

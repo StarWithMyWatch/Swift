@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="StarWithMyWatch" customModuleProvider="target">
             <connections>
+                <outlet property="identifiantTextField" destination="vhb-8Z-D1j" id="C6o-b5-e3T"/>
+                <outlet property="mdpTextField" destination="qzW-r3-6DW" id="6fo-Sj-Huq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,6 +48,7 @@
                     </state>
                     <connections>
                         <action selector="connectButton:" destination="-1" eventType="touchUpInside" id="08V-4H-8cA"/>
+
                     </connections>
                 </button>
             </subviews>
