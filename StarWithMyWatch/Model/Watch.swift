@@ -18,7 +18,7 @@ public struct Watch {
     init?(json: [String: Any]) {
         guard let _id = json["_id"] as? String,
             let nom = json["nom"] as? String,
-            let desc = json["desc"] as? String,
+            let desc = json["description"] as? String,
             let image = json["image"] as? String,
             let prix = json["prix"] as? Int
             else { return nil }

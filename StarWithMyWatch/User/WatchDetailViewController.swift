@@ -11,11 +11,11 @@ import UIKit
 class WatchDetailViewController: UIViewController {
 
     
-    //var event: Watch!
+    var watch: Watch!
     
-    class func newInstance(/*event: Watch*/) -> WatchDetailViewController {
+    class func newInstance(watch: Watch) -> WatchDetailViewController {
         let elvc = WatchDetailViewController()
-        //watch = watch
+        elvc.watch = watch
         return elvc
     }
     
@@ -32,18 +32,16 @@ class WatchDetailViewController: UIViewController {
     }
     
     func displayData(){
-        /*let imageURL = URL(string: event.imageURL)
+        let imageURL = URL(string: watch.image)
         let imageData = try! Data(contentsOf: imageURL!)
-        self.imageView.image = UIImage(data: imageData)
-        self.nameLabel.text = self.event.name
-        self.dateLabel.text = self.event.date
-        self.adressLabel.text = self.event.address
-        self.descriptionField.text = self.event.description*/
-        self.detailNameLabel.text = "CECI EST UN TEST DE NOM"
+        self.detailImageView.image = UIImage(data: imageData)
+        self.detailNameLabel.text = self.watch.nom
+        self.detailDescTextView.text = self.watch.desc
+        self.detailPriceLabel.text = "\(self.watch.prix)"
     }
     
     @IBAction func detailOrderButton(_ sender: Any) {
-        let watch = OrderViewController.newInstance(/*user: users[indexPath.row]*/)
+        let watch = OrderViewController.newInstance(watch: self.watch)
         self.navigationController?.pushViewController(watch, animated: true)
     }
     

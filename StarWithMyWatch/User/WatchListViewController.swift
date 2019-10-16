@@ -69,7 +69,7 @@ extension WatchListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let watch = WatchDetailViewController.newInstance(/*user: users[indexPath.row]*/)
+        let watch = WatchDetailViewController.newInstance(watch: watchs[indexPath.row])
         self.navigationController?.pushViewController(watch, animated: true)
     }
     

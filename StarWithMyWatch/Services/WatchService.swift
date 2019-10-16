@@ -28,25 +28,47 @@ public class WatchService {
     
     public func getWatchs(completion: @escaping ([Watch]) -> Void) {
         
-        Alamofire.request("https://demo2421622.mockable.io/watchs").responseJSON { (res) in
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/montres").responseJSON { (res) in
             
             guard let result = res.value as? [String:Any],
-            let events = result["watchs"] as? [[String:Any]] else  { return }
+            let events = result["montres"] as? [[String:Any]] else  { return }
             let eventsResult = events.compactMap({ (elem) -> Watch? in
                 return Watch(json: elem)
             })
-            print(eventsResult)
             completion(eventsResult)
 
-            //print(result)
+            
         }
-        /*Alamofire.request(baseurl/*, headers: headers*/).responseJSON { (res) in
+    }
+    
+    public func paycash(params: [String:Any], completion: @escaping (String,Int) -> Void) {
+        
+        Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
+            guard let session = res.value as? [String:Any],
+                let status = res.response?.statusCode else { return }
+            if(status == 200) {
+            completion("ca passe",status)
+            //completion(eventsResult)
+            
+            }else{
+                completion("ca passepas",status)
+
+        }
+    }
+    }
+    public func paypoints(completion: @escaping ([Watch]) -> Void) {
+        
+        Alamofire.request("link de payement ",method: .post,headers:headers).responseJSON { (res) in
+            
             guard let result = res.value as? [String:Any],
-                let events = result["events"] as? [[String:Any]] else { return }
+                let events = result["montres"] as? [[String:Any]] else  { return }
             let eventsResult = events.compactMap({ (elem) -> Watch? in
                 return Watch(json: elem)
             })
             completion(eventsResult)
-        }*/
-    }
+            
+            
+        }
+}
+
 }
