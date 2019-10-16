@@ -19,35 +19,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="623" height="198.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Augarde-HD" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-Eq-oHL">
-                        <rect key="frame" x="475" y="0.0" width="148" height="148"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-Eq-oHL">
+                        <rect key="frame" x="423" y="0.0" width="200" height="198.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="148" id="58e-Ex-4OH"/>
-                            <constraint firstAttribute="width" constant="148" id="KOJ-g8-ZYB"/>
+                            <constraint firstAttribute="width" constant="200" id="bM0-Xv-NK4"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoO-ok-sDN">
-                        <rect key="frame" x="128" y="65" width="42" height="21"/>
+                        <rect key="frame" x="139" y="79" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-N0-FJj">
-                        <rect key="frame" x="20" y="65" width="42" height="21"/>
+                        <rect key="frame" x="20" y="79" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="hOH-Eq-oHL" secondAttribute="trailing" id="7EA-s2-h6v"/>
-                    <constraint firstItem="hOH-Eq-oHL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AWV-RD-NmO"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Gqc-N0-FJj" secondAttribute="bottom" constant="68" id="MG3-cT-6CO"/>
-                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="Qeg-Q1-vhX"/>
-                    <constraint firstAttribute="bottom" secondItem="hOH-Eq-oHL" secondAttribute="bottom" id="fEl-2m-h4u"/>
-                    <constraint firstItem="ZoO-ok-sDN" firstAttribute="leading" secondItem="Gqc-N0-FJj" secondAttribute="trailing" constant="66" id="kvd-DY-ceq"/>
-                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="qSY-kj-wqW"/>
-                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="baseline" secondItem="ZoO-ok-sDN" secondAttribute="baseline" id="xWr-Xw-KuK"/>
+                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3Pi-aV-dgO"/>
+                    <constraint firstItem="hOH-Eq-oHL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="96C-yl-oH8"/>
+                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="baseline" secondItem="ZoO-ok-sDN" secondAttribute="baseline" id="S48-bQ-rim"/>
+                    <constraint firstAttribute="trailing" secondItem="hOH-Eq-oHL" secondAttribute="trailing" id="dUw-fS-9Bd"/>
+                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="ddT-5S-bGP"/>
+                    <constraint firstItem="hOH-Eq-oHL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fZy-Pb-EpC"/>
+                    <constraint firstItem="ZoO-ok-sDN" firstAttribute="leading" secondItem="Gqc-N0-FJj" secondAttribute="trailing" constant="77" id="hNj-dC-Tph"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -59,7 +57,4 @@
             <point key="canvasLocation" x="267.39130434782612" y="55.915178571428569"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Logo Augarde-HD" width="1165" height="761"/>
-    </resources>
 </document>

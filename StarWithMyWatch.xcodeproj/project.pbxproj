@@ -35,6 +35,7 @@
 		3F44E30BE8A4BC70F83C9A85 /* Pods_StarWithMyWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */; };
 		7EC89AA594D5CB2CEB45AC78 /* Pods_StarWithMyWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */; };
 		90279D5ECB5AED729D5A258D /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */; };
+		9617521B23575B2100F43C3C /* Watch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617521A23575B2100F43C3C /* Watch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E1C44AAD9F27836E612CB0 /* Pods-StarWithMyWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		96023B33199D4F09A706B77D /* Pods-StarWithMyWatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		9617521A23575B2100F43C3C /* Watch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch.swift; sourceTree = "<group>"; };
 		96EC8B293311D3BDF36629F0 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch_StarWithMyWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68542CD151707D3C3A697A4 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		0CBD679B235610250060771B /* StarWithMyWatch */ = {
 			isa = PBXGroup;
 			children = (
+				9617521923575B0900F43C3C /* Model */,
 				0CBD67FD23574AE60060771B /* User */,
 				0CBD67FA235749150060771B /* Services */,
 				0CBD67CE235628A10060771B /* Admin */,
@@ -250,6 +253,14 @@
 				2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9617521923575B0900F43C3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9617521A23575B2100F43C3C /* Watch.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBD679F235610250060771B /* ViewController.swift in Sources */,
+				9617521B23575B2100F43C3C /* Watch.swift in Sources */,
 				0CBD679D235610250060771B /* AppDelegate.swift in Sources */,
 				0CBD67CC235611010060771B /* HomeViewController.swift in Sources */,
 				0CBD680D23574AE60060771B /* TableViewController.swift in Sources */,

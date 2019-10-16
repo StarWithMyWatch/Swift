@@ -20,8 +20,11 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func btnSeConnecter(_ sender: UIButton) {
-        let next = AdminHomeViewController.newInstance()
-        self.navigationController?.pushViewController(next, animated: true)
+        WatchService.default.getWatchs { (watchs) in
+            let next = WatchListViewController.newInstance(watchs:watchs)
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+        
     }
     
     /*

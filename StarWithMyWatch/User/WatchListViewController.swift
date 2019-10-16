@@ -10,12 +10,12 @@ import UIKit
 
 class WatchListViewController: UIViewController {
     public static let watchCellId = "WATCH_CELL_ID"
-    //var watch: [Watch]!
+    var watchs: [Watch]!
 
     @IBOutlet var watchTableView: UITableView!
-    class func newInstance(/*watchs: [Watch]*/) -> WatchListViewController{
+    class func newInstance(watchs: [Watch]) -> WatchListViewController{
         let elvc = WatchListViewController()
-        //elvc.watchs = watchs
+        elvc.watchs = watchs
         return elvc
     }
     
@@ -50,19 +50,19 @@ extension WatchListViewController: UITableViewDelegate {
 extension WatchListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return self.watchs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WatchListViewController.watchCellId, for: indexPath) as! WatchListTableViewCell
         
-        /*let user = users[indexPath.row]
-        let imageURL = URL(string: user.photo)
+        let watch = watchs[indexPath.row]
+        let imageURL = URL(string: watch.image)
         let imageData = try! Data(contentsOf: imageURL!)
-        cell.pictureView.image = UIImage(data: imageData)
-        cell.usernameLabel.text = user.username*/
+        cell.watchImageView.image = UIImage(data: imageData)
+        cell.watchPriceLabel.text = "\(watch.prix)"
     
-        cell.watchNameLabel.text = "testtt"
+        cell.watchNameLabel.text = watch.nom
         
         return cell
     }
