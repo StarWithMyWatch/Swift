@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011A07C36699E0DAADF4E6F1 /* Pods_StarWithMyWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E33A40BA1C56B81E818AA0 /* Pods_StarWithMyWatchTests.framework */; };
 		0CBD679D235610250060771B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD679C235610250060771B /* AppDelegate.swift */; };
 		0CBD679F235610250060771B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD679E235610250060771B /* ViewController.swift */; };
 		0CBD67A4235610260060771B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD67A3235610260060771B /* Assets.xcassets */; };
@@ -15,12 +16,21 @@
 		0CBD67BD235610260060771B /* StarWithMyWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD67BC235610260060771B /* StarWithMyWatchUITests.swift */; };
 		0CBD67CC235611010060771B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD67CA235611010060771B /* HomeViewController.swift */; };
 		0CBD67CD235611010060771B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD67CB235611010060771B /* HomeViewController.xib */; };
+		7341308C1A5DFA7CB768B224 /* Pods_StarWithMyWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D1CD4C8B540382D144E1DA /* Pods_StarWithMyWatch.framework */; };
+		9615619B2356FF1700EFEAE7 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961561992356FF1700EFEAE7 /* WatchListViewController.swift */; };
+		9615619C2356FF1700EFEAE7 /* WatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9615619A2356FF1700EFEAE7 /* WatchListViewController.xib */; };
+		9615619F2356FF4500EFEAE7 /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615619D2356FF4500EFEAE7 /* WatchListTableViewCell.swift */; };
+		961561A02356FF4500EFEAE7 /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9615619E2356FF4500EFEAE7 /* WatchListTableViewCell.xib */; };
+		961561A323570A4700EFEAE7 /* WatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961561A123570A4700EFEAE7 /* WatchDetailViewController.swift */; };
+		961561A423570A4700EFEAE7 /* WatchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961561A223570A4700EFEAE7 /* WatchDetailViewController.xib */; };
+		961561A72357122B00EFEAE7 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961561A52357122B00EFEAE7 /* OrderViewController.swift */; };
+		961561A82357122B00EFEAE7 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 961561A62357122B00EFEAE7 /* OrderViewController.xib */; };
+		961561AB235723A700EFEAE7 /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961561AA235723A700EFEAE7 /* WatchService.swift */; };
 		0CBD67DD2357038B0060771B /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD67DB2357038B0060771B /* AdminHomeViewController.swift */; };
 		0CBD67DE2357038B0060771B /* AdminHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD67DC2357038B0060771B /* AdminHomeViewController.xib */; };
 		0CBD67E1235704A70060771B /* AdminHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD67DF235704A70060771B /* AdminHomeCollectionViewCell.swift */; };
 		0CBD67E2235704A70060771B /* AdminHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD67E0235704A70060771B /* AdminHomeCollectionViewCell.xib */; };
 		3F44E30BE8A4BC70F83C9A85 /* Pods_StarWithMyWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */; };
-		7EC89AA594D5CB2CEB45AC78 /* Pods_StarWithMyWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */; };
 		90279D5ECB5AED729D5A258D /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0133D56D721B0FB0E46429EF /* Pods-StarWithMyWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.release.xcconfig"; sourceTree = "<group>"; };
+		020BF9A63FC36D4BC1443C13 /* Pods-StarWithMyWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		032D48679E74C61C490D53E8 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0CBD6799235610250060771B /* StarWithMyWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWithMyWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBD679C235610250060771B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CBD679E235610250060771B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,19 +69,27 @@
 		0CBD67BE235610260060771B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CBD67CA235611010060771B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0CBD67CB235611010060771B /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+
+		0F1EF66E83EDA7B74797B94B /* Pods-StarWithMyWatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		10E33A40BA1C56B81E818AA0 /* Pods_StarWithMyWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4128F66C9FAB60D170ED5FAF /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch_StarWithMyWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522BD1B1E3329CD6FC2894E8 /* Pods-StarWithMyWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		56D1CD4C8B540382D144E1DA /* Pods_StarWithMyWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FE3BF40195AE16C82B4B98F /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		961561992356FF1700EFEAE7 /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
+		9615619A2356FF1700EFEAE7 /* WatchListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListViewController.xib; sourceTree = "<group>"; };
+		9615619D2356FF4500EFEAE7 /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
+		9615619E2356FF4500EFEAE7 /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
+		961561A123570A4700EFEAE7 /* WatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDetailViewController.swift; sourceTree = "<group>"; };
+		961561A223570A4700EFEAE7 /* WatchDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchDetailViewController.xib; sourceTree = "<group>"; };
+		961561A52357122B00EFEAE7 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		961561A62357122B00EFEAE7 /* OrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
+		961561AA235723A700EFEAE7 /* WatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
 		0CBD67DB2357038B0060771B /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		0CBD67DC2357038B0060771B /* AdminHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHomeViewController.xib; sourceTree = "<group>"; };
 		0CBD67DF235704A70060771B /* AdminHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CBD67E0235704A70060771B /* AdminHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminHomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		25D24E8A714E382D81C1BB6D /* Pods-StarWithMyWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.release.xcconfig"; sourceTree = "<group>"; };
-		2A99F766DFC9BC735E347F47 /* Pods-StarWithMyWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72E1C44AAD9F27836E612CB0 /* Pods-StarWithMyWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.debug.xcconfig"; sourceTree = "<group>"; };
-		96023B33199D4F09A706B77D /* Pods-StarWithMyWatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.release.xcconfig"; sourceTree = "<group>"; };
-		96EC8B293311D3BDF36629F0 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatch_StarWithMyWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C68542CD151707D3C3A697A4 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC89AA594D5CB2CEB45AC78 /* Pods_StarWithMyWatch.framework in Frameworks */,
+
+				7341308C1A5DFA7CB768B224 /* Pods_StarWithMyWatch.framework in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +107,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				3F44E30BE8A4BC70F83C9A85 /* Pods_StarWithMyWatchTests.framework in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				90279D5ECB5AED729D5A258D /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework in Frameworks */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +133,10 @@
 				0CBD67B0235610260060771B /* StarWithMyWatchTests */,
 				0CBD67BB235610260060771B /* StarWithMyWatchUITests */,
 				0CBD679A235610250060771B /* Products */,
+
 				375DDC3C877A807E91A7BD6E /* Pods */,
 				3E9959C7CD8F3096FA0E3808 /* Frameworks */,
+
 			);
 			sourceTree = "<group>";
 		};
@@ -124,7 +153,12 @@
 		0CBD679B235610250060771B /* StarWithMyWatch */ = {
 			isa = PBXGroup;
 			children = (
+
+				961561A92357239000EFEAE7 /* Services */,
+				961561942356FEA900EFEAE7 /* User */,
+
 				0CBD67CE235628A10060771B /* Admin */,
+
 				0CBD679C235610250060771B /* AppDelegate.swift */,
 				0CBD679E235610250060771B /* ViewController.swift */,
 				0CBD67A3235610260060771B /* Assets.xcassets */,
@@ -154,6 +188,17 @@
 			path = StarWithMyWatchUITests;
 			sourceTree = "<group>";
 		};
+
+		0E0F2C65CDC5244A0FCDCEDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56D1CD4C8B540382D144E1DA /* Pods_StarWithMyWatch.framework */,
+				4128F66C9FAB60D170ED5FAF /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */,
+				10E33A40BA1C56B81E818AA0 /* Pods_StarWithMyWatchTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0CBD67CE235628A10060771B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,11 +219,35 @@
 				C68542CD151707D3C3A697A4 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */,
 				2A99F766DFC9BC735E347F47 /* Pods-StarWithMyWatchTests.debug.xcconfig */,
 				96023B33199D4F09A706B77D /* Pods-StarWithMyWatchTests.release.xcconfig */,
+
 			);
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
+
+		961561942356FEA900EFEAE7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				961561992356FF1700EFEAE7 /* WatchListViewController.swift */,
+				9615619A2356FF1700EFEAE7 /* WatchListViewController.xib */,
+				9615619D2356FF4500EFEAE7 /* WatchListTableViewCell.swift */,
+				9615619E2356FF4500EFEAE7 /* WatchListTableViewCell.xib */,
+				961561A123570A4700EFEAE7 /* WatchDetailViewController.swift */,
+				961561A223570A4700EFEAE7 /* WatchDetailViewController.xib */,
+				961561A52357122B00EFEAE7 /* OrderViewController.swift */,
+				961561A62357122B00EFEAE7 /* OrderViewController.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		961561A92357239000EFEAE7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				961561AA235723A700EFEAE7 /* WatchService.swift */,
+			);
+			path = Services;
+
 		3E9959C7CD8F3096FA0E3808 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +256,7 @@
 				2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */,
 			);
 			name = Frameworks;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,11 +266,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBD67C1235610260060771B /* Build configuration list for PBXNativeTarget "StarWithMyWatch" */;
 			buildPhases = (
-				A63D300FF4280DAE0B4AF8A8 /* [CP] Check Pods Manifest.lock */,
+
+				3F49DF1877F725A006F43ED7 /* [CP] Check Pods Manifest.lock */,
 				0CBD6795235610250060771B /* Sources */,
 				0CBD6796235610250060771B /* Frameworks */,
 				0CBD6797235610250060771B /* Resources */,
-				DF68CE3E498578A130B83460 /* [CP] Embed Pods Frameworks */,
+				A1765668A98563FFC84C1BBB /* [CP] Embed Pods Frameworks */,
+
 			);
 			buildRules = (
 			);
@@ -215,7 +287,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBD67C4235610260060771B /* Build configuration list for PBXNativeTarget "StarWithMyWatchTests" */;
 			buildPhases = (
-				E29AE55BEA1C881D8EF5B8C8 /* [CP] Check Pods Manifest.lock */,
+
+				3D1E9AB867CA914A78C906DF /* [CP] Check Pods Manifest.lock */,
+
 				0CBD67A9235610260060771B /* Sources */,
 				0CBD67AA235610260060771B /* Frameworks */,
 				0CBD67AB235610260060771B /* Resources */,
@@ -234,11 +308,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBD67C7235610260060771B /* Build configuration list for PBXNativeTarget "StarWithMyWatchUITests" */;
 			buildPhases = (
-				C8CBD82201FFF25656B03778 /* [CP] Check Pods Manifest.lock */,
+
+				E92B01DF424935A8A345F8DF /* [CP] Check Pods Manifest.lock */,
 				0CBD67B4235610260060771B /* Sources */,
 				0CBD67B5235610260060771B /* Frameworks */,
 				0CBD67B6235610260060771B /* Resources */,
-				FAC48AA08F430C49A5C91A23 /* [CP] Embed Pods Frameworks */,
+				971600A3003B1AF6D24815F0 /* [CP] Embed Pods Frameworks */,
+
 			);
 			buildRules = (
 			);
@@ -298,11 +374,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				961561A82357122B00EFEAE7 /* OrderViewController.xib in Resources */,
+
 				0CBD67E2235704A70060771B /* AdminHomeCollectionViewCell.xib in Resources */,
+
 				0CBD67A7235610260060771B /* LaunchScreen.storyboard in Resources */,
+				961561A423570A4700EFEAE7 /* WatchDetailViewController.xib in Resources */,
+				961561A02356FF4500EFEAE7 /* WatchListTableViewCell.xib in Resources */,
 				0CBD67A4235610260060771B /* Assets.xcassets in Resources */,
 				0CBD67CD235611010060771B /* HomeViewController.xib in Resources */,
+
+				9615619C2356FF1700EFEAE7 /* WatchListViewController.xib in Resources */,
+
 				0CBD67DE2357038B0060771B /* AdminHomeViewController.xib in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +409,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A63D300FF4280DAE0B4AF8A8 /* [CP] Check Pods Manifest.lock */ = {
+
+		3D1E9AB867CA914A78C906DF /* [CP] Check Pods Manifest.lock */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,36 +426,63 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+
+				"$(DERIVED_FILE_DIR)/Pods-StarWithMyWatchTests-checkManifestLockResult.txt",
+
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+
+		3F49DF1877F725A006F43ED7 /* [CP] Check Pods Manifest.lock */ = {
+
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+
 				"$(DERIVED_FILE_DIR)/Pods-StarWithMyWatch-checkManifestLockResult.txt",
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8CBD82201FFF25656B03778 /* [CP] Check Pods Manifest.lock */ = {
+
+		971600A3003B1AF6D24815F0 /* [CP] Embed Pods Frameworks */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+
+				"${PODS_ROOT}/Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StarWithMyWatch-StarWithMyWatchUITests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF68CE3E498578A130B83460 /* [CP] Embed Pods Frameworks */ = {
+		A1765668A98563FFC84C1BBB /* [CP] Embed Pods Frameworks */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -384,12 +499,8 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E29AE55BEA1C881D8EF5B8C8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
+		E92B01DF424935A8A345F8DF /* [CP] Check Pods Manifest.lock */ = {
+
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
@@ -412,6 +523,21 @@
 			files = (
 			);
 			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StarWithMyWatch-StarWithMyWatchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+
 				"${PODS_ROOT}/Target Support Files/Pods-StarWithMyWatch-StarWithMyWatchUITests/Pods-StarWithMyWatch-StarWithMyWatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -433,6 +559,11 @@
 				0CBD679F235610250060771B /* ViewController.swift in Sources */,
 				0CBD679D235610250060771B /* AppDelegate.swift in Sources */,
 				0CBD67CC235611010060771B /* HomeViewController.swift in Sources */,
+				961561A72357122B00EFEAE7 /* OrderViewController.swift in Sources */,
+				9615619B2356FF1700EFEAE7 /* WatchListViewController.swift in Sources */,
+				961561AB235723A700EFEAE7 /* WatchService.swift in Sources */,
+				9615619F2356FF4500EFEAE7 /* WatchListTableViewCell.swift in Sources */,
+				961561A323570A4700EFEAE7 /* WatchDetailViewController.swift in Sources */,
 				0CBD67E1235704A70060771B /* AdminHomeCollectionViewCell.swift in Sources */,
 				0CBD67DD2357038B0060771B /* AdminHomeViewController.swift in Sources */,
 			);
@@ -599,7 +730,8 @@
 		};
 		0CBD67C2235610260060771B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72E1C44AAD9F27836E612CB0 /* Pods-StarWithMyWatch.debug.xcconfig */;
+			baseConfigurationReference = 020BF9A63FC36D4BC1443C13 /* Pods-StarWithMyWatch.debug.xcconfig */;
+
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,7 +750,9 @@
 		};
 		0CBD67C3235610260060771B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25D24E8A714E382D81C1BB6D /* Pods-StarWithMyWatch.release.xcconfig */;
+ test
+			baseConfigurationReference = 0133D56D721B0FB0E46429EF /* Pods-StarWithMyWatch.release.xcconfig */;
+
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,7 +771,8 @@
 		};
 		0CBD67C5235610260060771B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A99F766DFC9BC735E347F47 /* Pods-StarWithMyWatchTests.debug.xcconfig */;
+			baseConfigurationReference = 522BD1B1E3329CD6FC2894E8 /* Pods-StarWithMyWatchTests.debug.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -659,7 +794,8 @@
 		};
 		0CBD67C6235610260060771B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96023B33199D4F09A706B77D /* Pods-StarWithMyWatchTests.release.xcconfig */;
+			baseConfigurationReference = 0F1EF66E83EDA7B74797B94B /* Pods-StarWithMyWatchTests.release.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -681,7 +817,8 @@
 		};
 		0CBD67C8235610260060771B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96EC8B293311D3BDF36629F0 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig */;
+			baseConfigurationReference = 032D48679E74C61C490D53E8 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.debug.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -702,7 +839,8 @@
 		};
 		0CBD67C9235610260060771B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C68542CD151707D3C3A697A4 /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */;
+			baseConfigurationReference = 5FE3BF40195AE16C82B4B98F /* Pods-StarWithMyWatch-StarWithMyWatchUITests.release.xcconfig */;
+
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
