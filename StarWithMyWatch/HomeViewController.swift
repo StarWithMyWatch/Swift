@@ -32,18 +32,13 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-/*
+
     @IBAction func btnAdminConnect(_ sender: Any) {
-        WatchService.default.getPhotosMan { (photosMen) in
-            WatchService.default.getPhotosWoman(completion: { (photosWomen) in
-                let next = AdminHomeViewController.newInstance(usersMan : photosMen, usersWoman : photosWomen)
-                self.navigationController?.pushViewController(next, animated: true)
-            })
-            
-        }
+        let next = SignUpViewController.newInstance()
+        self.navigationController?.pushViewController(next, animated: true)
         
     }
- */
+ 
     @IBAction func btnSeConnecter(_ sender: UIButton) {
         
         WatchService.default.getUser(email: self.identifiantTextField.text!, password: self.mdpTextField.text!, completion: { (user) in
@@ -65,10 +60,6 @@ class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func btnInscrire(_ sender: UIButton) {
-        let next = SignUpViewController.newInstance()
-        self.navigationController?.pushViewController(next, animated: true)
-    }
     /*
     // MARK: - Navigation
 

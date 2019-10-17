@@ -77,7 +77,7 @@ class OrderViewController: BasicViewController {
                 "code": "",
                 "id": self.watch._id
             ]
-            WatchService.default.paypoints(params: params) { (error, status) in
+            WatchService.default.paypoints(header: user.token,params: params) { (error, status) in
                 print(status)
                 print(error)
                 if(status == 200){
@@ -93,7 +93,7 @@ class OrderViewController: BasicViewController {
                 "code": self.orderCodeTextField.text!,
                 "id": self.watch._id
             ]
-            WatchService.default.paycash(params: params) { (error, status) in
+            WatchService.default.paycash(header: user.token,params: params) { (error, status) in
                 print(status)
                 if(status == 200){
                     self.alertStatus(points: false)

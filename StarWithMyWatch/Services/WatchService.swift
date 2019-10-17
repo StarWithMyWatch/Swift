@@ -17,10 +17,7 @@ public class WatchService {
     private init(){
         self.baseurl = "http://demo2421622.mockable.io/watchs"
     }
-    let headers: HTTPHeaders = [
-       // "Authorization": Session.default.token,
-        "Content-Type": "application/json"
-    ]
+    
     
     public func getBaseURL() -> String {
         return self.baseurl;
@@ -69,8 +66,11 @@ public class WatchService {
         }
     }
     
-    public func paycash(params: [String:Any], completion: @escaping (String,Int) -> Void) {
-        
+    public func paycash(header:String,params: [String:Any], completion: @escaping (String,Int) -> Void) {
+        let headers: HTTPHeaders = [
+            "Authorization": header,
+            "Content-Type": "application/json"
+        ]
         Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
             guard let status = res.response?.statusCode else { return }
             if(status == 200) {
@@ -83,8 +83,11 @@ public class WatchService {
     }
         completion("cest ps dedans",200)
     }
-    public func paypoints(params: [String:Any], completion: @escaping (String,Int) -> Void) {
-        
+    public func paypoints(header:String,params: [String:Any], completion: @escaping (String,Int) -> Void) {
+        let headers: HTTPHeaders = [
+            "Authorization": header,
+            "Content-Type": "application/json"
+        ]
         Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
             guard let status = res.response?.statusCode else { return }
             if(status == 200) {
@@ -141,7 +144,6 @@ public class WatchService {
                          usingThreshold:UInt64.init(),
                          to: "url",
                          method: .post,
-                         headers: headers,
                          encodingCompletion: { encodingResult in
                             completion(encodingResult)
         })

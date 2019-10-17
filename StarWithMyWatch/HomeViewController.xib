@@ -47,7 +47,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="9mL-kg-FQD"/>
                     </constraints>
-                    <state key="normal" title="Se connecter en tant qu'utilisateur">
+                    <state key="normal" title="Se connecter">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -61,18 +61,11 @@
                         <constraint firstAttribute="height" constant="44" id="Lwu-TU-wkn"/>
                         <constraint firstAttribute="width" constant="220" id="gXc-yb-uTo"/>
                     </constraints>
-                    <state key="normal" title="Se connecter en tant qu'admin">
+                    <state key="normal" title="S'inscrire">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="btnAdminConnect:" destination="-1" eventType="touchUpInside" id="jom-Ha-sVD"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAA-mg-zwQ">
-                    <rect key="frame" x="0.0" y="697" width="414" height="30"/>
-                    <state key="normal" title="S'inscrire"/>
-                    <connections>
-                        <action selector="btnInscrire:" destination="-1" eventType="touchUpInside" id="ypp-PC-40v"/>
                     </connections>
                 </button>
             </subviews>
@@ -82,13 +75,11 @@
                 <constraint firstItem="IAV-RK-MS7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="102" id="7co-EK-zpn"/>
                 <constraint firstItem="qzW-r3-6DW" firstAttribute="top" secondItem="vhb-8Z-D1j" secondAttribute="bottom" constant="90" id="8EB-2z-gt8"/>
                 <constraint firstItem="tVu-BU-MnJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="8gc-SM-NU9"/>
-                <constraint firstItem="bAA-mg-zwQ" firstAttribute="top" secondItem="2tC-37-yP9" secondAttribute="bottom" constant="20" id="9gs-4B-jj2"/>
                 <constraint firstItem="qzW-r3-6DW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="Ix1-1O-PjX"/>
                 <constraint firstItem="IAV-RK-MS7" firstAttribute="top" secondItem="qzW-r3-6DW" secondAttribute="bottom" constant="67" id="N6p-xU-LKg"/>
                 <constraint firstItem="IAV-RK-MS7" firstAttribute="leading" secondItem="2tC-37-yP9" secondAttribute="leading" id="Q5a-BL-6xF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qzW-r3-6DW" secondAttribute="trailing" constant="100" id="WYV-Vn-Z0T"/>
                 <constraint firstItem="tVu-BU-MnJ" firstAttribute="centerX" secondItem="vhb-8Z-D1j" secondAttribute="centerX" id="YaC-Cd-fya"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bAA-mg-zwQ" secondAttribute="trailing" id="axd-SA-vdr"/>
                 <constraint firstItem="2tC-37-yP9" firstAttribute="top" secondItem="IAV-RK-MS7" secondAttribute="bottom" constant="24" id="gck-Kr-N5O"/>
                 <constraint firstItem="vhb-8Z-D1j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jsM-3z-Byu"/>
                 <constraint firstItem="vhb-8Z-D1j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="mz3-eh-hPs"/>
@@ -96,7 +87,6 @@
                 <constraint firstItem="IAV-RK-MS7" firstAttribute="centerX" secondItem="2tC-37-yP9" secondAttribute="centerX" id="rcy-Hd-cyO"/>
                 <constraint firstItem="tVu-BU-MnJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rtf-PW-ze8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vhb-8Z-D1j" secondAttribute="trailing" constant="100" id="yLQ-yd-0xZ"/>
-                <constraint firstItem="bAA-mg-zwQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zXP-3M-TLC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
