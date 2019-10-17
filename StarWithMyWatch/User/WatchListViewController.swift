@@ -24,22 +24,17 @@ class WatchListViewController: UIViewController {
         self.watchTableView.delegate = self
         self.watchTableView.dataSource = self
         self.watchTableView.register(UINib(nibName: "WatchListTableViewCell", bundle: nil), forCellReuseIdentifier: WatchListViewController.watchCellId)
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchUpload))
 
-        
-
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func touchUpload() {
+        let insert = AdminHomeRecapViewController.newInstance(usersMen: ["test"], usersWomen: ["test"])
+        self.navigationController?.pushViewController(insert, animated: true)
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -60,7 +55,8 @@ extension WatchListViewController: UITableViewDataSource {
         let imageURL = URL(string: watch.image)
         let imageData = try! Data(contentsOf: imageURL!)
         cell.watchImageView.image = UIImage(data: imageData)
-        cell.watchPriceLabel.text = "\(watch.prix)"
+        
+        cell.watchPriceLabel.text = "\(watch.prix)€"
     
         cell.watchNameLabel.text = watch.nom
         

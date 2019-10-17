@@ -48,27 +48,28 @@ public class WatchService {
                 let status = res.response?.statusCode else { return }
             if(status == 200) {
             completion("ca passe",status)
-            //completion(eventsResult)
             
             }else{
                 completion("ca passepas",status)
 
         }
     }
+        completion("cest ps dedans",200)
     }
-    public func paypoints(completion: @escaping ([Watch]) -> Void) {
+    public func paypoints(params: [String:Any], completion: @escaping (String,Int) -> Void) {
         
-        Alamofire.request("link de payement ",method: .post,headers:headers).responseJSON { (res) in
-            
-            guard let result = res.value as? [String:Any],
-                let events = result["montres"] as? [[String:Any]] else  { return }
-            let eventsResult = events.compactMap({ (elem) -> Watch? in
-                return Watch(json: elem)
-            })
-            completion(eventsResult)
-            
-            
+        Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
+            guard let session = res.value as? [String:Any],
+                let status = res.response?.statusCode else { return }
+            if(status == 200) {
+                completion("ca passe",status)
+                
+            }else{
+                completion("ca passepas",status)
+                
+            }
         }
+        completion("cest ps dedans",200)
     }
     
     public func getPhotosMan(completion: @escaping ([User]) -> Void) {
@@ -99,6 +100,8 @@ public class WatchService {
             
             
         }
+        
     }
-
+    
 }
+

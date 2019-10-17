@@ -29,6 +29,16 @@ class OrderViewController: UIViewController {
 
     
     override func viewDidLoad() {
+        orderPayButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        orderPayButton.layer.cornerRadius = 0.3 * orderPayButton.bounds.size.width
+        orderPayButton.clipsToBounds = true
+        orderImageView.layer.cornerRadius = orderImageView.frame.size.width / 2
+        orderImageView.clipsToBounds = true
+        orderImageView.layer.shadowColor = UIColor.black.cgColor
+        orderImageView.layer.shadowOpacity = 0.5
+        orderImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        orderImageView.layer.shadowRadius = 1
+        orderImageView.layer.masksToBounds = false
         displayData()
         super.viewDidLoad()
 
@@ -40,7 +50,7 @@ class OrderViewController: UIViewController {
         let imageData = try! Data(contentsOf: imageURL!)
         self.orderImageView.image = UIImage(data: imageData)
         self.orderNameLabel.text = self.watch.nom
-        self.orderPriceLabel.text = "\(self.watch.prix)"
+        self.orderPriceLabel.text = "\(self.watch.prix)€"
         print(self.watch._id)
     }
 
@@ -48,33 +58,63 @@ class OrderViewController: UIViewController {
     }
     
     @IBAction func orderPayButton(_ sender: Any) {
-         self.alertStatus()
+        
 
-       /* if orderPointsSwitch.isOn {
+        if orderPointsSwitch.isOn {
+            print("yayayaya")
+            let params: [String:Any] = [
+                "code": self.orderCodeTextField.text,
+                "id": self.watch._id
+            ]
+            WatchService.default.paypoints(params: params) { (error, status) in
+                print(status)
+                if(status == 200){
+                    self.alertStatus(points: true)
+                }else{
+                    Toast.show(message: "il y a une erreur", controller: self)
+                }
+            }
+           
+        }else{
             print("yoyoyo")
             let params: [String:Any] = [
                 "code": self.orderCodeTextField.text,
                 "id": self.watch._id
             ]
             WatchService.default.paycash(params: params) { (error, status) in
-             if(status == 200){
-         
-             }else{
-                Toast.show(message: "il y a une erreur", controller: self)
+                print(status)
+                if(status == 200){
+                    self.alertStatus(points: false)
+                }else{
+                    Toast.show(message: "il y a une erreur", controller: self)
                 }
             }
-        }else{
-            print("yayayaya")
-        }*/
+        }
     }
     
-    func alertStatus() {
-        let alert = UIAlertController(title: "Insertion réussi", message: "Votre évènement a bien été enregistré", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
-            
-        })
-        alert.addAction(ok)
-        self.present(alert, animated: true)
+    func alertStatus(points:Bool) {
+        if points {
+            let alert = UIAlertController(title: "BRAVO", message: "Votre achat a bien été effectué avec vos points", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Merci", style: .default, handler: { (action) -> Void in
+                WatchService.default.getWatchs { (watchs) in
+                    let next = WatchListViewController.newInstance(watchs:watchs)
+                    self.navigationController?.pushViewController(next, animated: true)
+                }
+            })
+            alert.addAction(ok)
+            self.present(alert, animated: true)
+        }else{
+            let alert = UIAlertController(title: "BRAVO", message: "Votre achat a bien été effectué avec votre cash", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Merci", style: .default, handler: { (action) -> Void in
+                WatchService.default.getWatchs { (watchs) in
+                    let next = WatchListViewController.newInstance(watchs:watchs)
+                    self.navigationController?.pushViewController(next, animated: true)
+                }
+            })
+            alert.addAction(ok)
+            self.present(alert, animated: true)
+        }
+        
     }
     /*
     // MARK: - Navigation

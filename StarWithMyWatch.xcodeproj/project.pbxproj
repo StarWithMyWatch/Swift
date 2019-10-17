@@ -25,8 +25,6 @@
 		0CBD680A23574AE60060771B /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD680023574AE60060771B /* WatchListViewController.swift */; };
 		0CBD680B23574AE60060771B /* WatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680123574AE60060771B /* WatchListViewController.xib */; };
 		0CBD680C23574AE60060771B /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680223574AE60060771B /* OrderViewController.xib */; };
-		0CBD680D23574AE60060771B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD680323574AE60060771B /* TableViewController.swift */; };
-		0CBD680E23574AE60060771B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680423574AE60060771B /* TableViewController.xib */; };
 		0CBD680F23574AE60060771B /* WatchListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680523574AE60060771B /* WatchListTableViewCell.xib */; };
 		0CBD681023574AE60060771B /* WatchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD680623574AE60060771B /* WatchDetailViewController.xib */; };
 		0CBD681123574AE60060771B /* WatchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD680723574AE60060771B /* WatchListTableViewCell.swift */; };
@@ -84,8 +82,6 @@
 		0CBD680023574AE60060771B /* WatchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		0CBD680123574AE60060771B /* WatchListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WatchListViewController.xib; sourceTree = "<group>"; };
 		0CBD680223574AE60060771B /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
-		0CBD680323574AE60060771B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		0CBD680423574AE60060771B /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		0CBD680523574AE60060771B /* WatchListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WatchListTableViewCell.xib; sourceTree = "<group>"; };
 		0CBD680623574AE60060771B /* WatchDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WatchDetailViewController.xib; sourceTree = "<group>"; };
 		0CBD680723574AE60060771B /* WatchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchListTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,8 +219,6 @@
 				0CBD680023574AE60060771B /* WatchListViewController.swift */,
 				0CBD680123574AE60060771B /* WatchListViewController.xib */,
 				0CBD680223574AE60060771B /* OrderViewController.xib */,
-				0CBD680323574AE60060771B /* TableViewController.swift */,
-				0CBD680423574AE60060771B /* TableViewController.xib */,
 				0CBD680523574AE60060771B /* WatchListTableViewCell.xib */,
 				0CBD680623574AE60060771B /* WatchDetailViewController.xib */,
 				0CBD680723574AE60060771B /* WatchListTableViewCell.swift */,
@@ -410,7 +404,6 @@
 				0CBD67CD235611010060771B /* HomeViewController.xib in Resources */,
 				0CBD681023574AE60060771B /* WatchDetailViewController.xib in Resources */,
 				0CBD67DE2357038B0060771B /* AdminHomeViewController.xib in Resources */,
-				0CBD680E23574AE60060771B /* TableViewController.xib in Resources */,
 				0CBD681623575A9F0060771B /* AdminHomeNextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +537,6 @@
 				0CBD679D235610250060771B /* AppDelegate.swift in Sources */,
 				0CBD67CC235611010060771B /* HomeViewController.swift in Sources */,
 				0CBD6820235793C50060771B /* User.swift in Sources */,
-				0CBD680D23574AE60060771B /* TableViewController.swift in Sources */,
 				0CBD681523575A9F0060771B /* AdminHomeNextViewController.swift in Sources */,
 				0CBD681D2357859B0060771B /* AdminHomeRecapViewController.swift in Sources */,
 				0CBD67E1235704A70060771B /* AdminHomeCollectionViewCell.swift in Sources */,

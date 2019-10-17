@@ -25,6 +25,16 @@ class WatchDetailViewController: UIViewController {
     @IBOutlet var detailPriceLabel: UILabel!
     @IBOutlet var detailOrderButton: UIButton!
     override func viewDidLoad() {
+        detailOrderButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        detailOrderButton.layer.cornerRadius = 0.3 * detailOrderButton.bounds.size.width
+        detailOrderButton.clipsToBounds = true
+        detailImageView.layer.cornerRadius = detailImageView.frame.size.width / 2
+        detailImageView.clipsToBounds = true
+        detailImageView.layer.shadowColor = UIColor.black.cgColor
+        detailImageView.layer.shadowOpacity = 0.5
+        detailImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        detailImageView.layer.shadowRadius = 1
+        detailImageView.layer.masksToBounds = false
         displayData()
         super.viewDidLoad()
 
@@ -37,7 +47,7 @@ class WatchDetailViewController: UIViewController {
         self.detailImageView.image = UIImage(data: imageData)
         self.detailNameLabel.text = self.watch.nom
         self.detailDescTextView.text = self.watch.desc
-        self.detailPriceLabel.text = "\(self.watch.prix)"
+        self.detailPriceLabel.text = "\(self.watch.prix)€"
     }
     
     @IBAction func detailOrderButton(_ sender: Any) {

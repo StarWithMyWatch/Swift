@@ -15,6 +15,9 @@ class WatchListTableViewCell: UITableViewCell {
     @IBOutlet var watchPriceLabel: UILabel!
     @IBOutlet var watchNameLabel: UILabel!
     override func awakeFromNib() {
+        
+        watchImageView.layer.cornerRadius = watchImageView.frame.size.width / 2
+        watchImageView.clipsToBounds = true
         super.awakeFromNib()
         // Initialization code
     }
