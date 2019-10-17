@@ -16,6 +16,7 @@ class AdminHomeViewController: BasicViewController{
     var doubletapped = false
     var longPressure = false
     var choosenList : [String] = []
+    var choosenListImage : [String] = []
     var usersMen : [User] = []
     var usersWomen : [User] = []
     
@@ -33,6 +34,7 @@ class AdminHomeViewController: BasicViewController{
         self.adminHomeCollectionView.delegate = self
         self.adminHomeCollectionView.dataSource = self
         self.adminHomeCollectionView.register(UINib(nibName: "AdminHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AdminHomeViewController.adminCellId)
+        self.navigationItem.setHidesBackButton(true, animated:true);
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.doubleTapped(gesture:)))
         tap.numberOfTapsRequired = 2
@@ -72,7 +74,7 @@ class AdminHomeViewController: BasicViewController{
     
     @objc func nextPageWoman() {
         if(choosenList.count == 2){
-            let next = AdminHomeNextViewController.newInstance(usersMenChoosen : self.choosenList, usersWomen : usersWomen)
+            let next = AdminHomeNextViewController.newInstance(usersMenChoosen : self.choosenList, usersMenChoosenImage : self.choosenListImage, usersWomen : usersWomen)
             self.navigationController?.pushViewController(next, animated: true)
         } else {
             Toast.show(message: "Vous devez au moins choisir 2 photos", controller: self)
@@ -100,10 +102,13 @@ extension AdminHomeViewController: UICollectionViewDataSource {
         cell.image.image = UIImage(data: imageData)
         if(choosenList.count < 2) {
             if(doubletapped){
-                cell.imageLike.image = UIImage(named: "coeurRouge")
+                cell.imageLike.image = UIImage(named: "coeurFondRouge")
                 doubletapped = false
                 if(!choosenList.contains(usersMen[indexPath.row]._id)){
                     choosenList.append(usersMen[indexPath.row]._id)
+                }
+                if(!choosenListImage.contains(usersMen[indexPath.row].image)){
+                    choosenListImage.append(usersMen[indexPath.row].image)
                 }
             }
             if(longPressure){
@@ -111,6 +116,9 @@ extension AdminHomeViewController: UICollectionViewDataSource {
                 longPressure = false
                 choosenList.removeAll { (e) -> Bool in
                     return e == usersMen[indexPath.row]._id
+                }
+                choosenListImage.removeAll { (e) -> Bool in
+                    return e == usersMen[indexPath.row].image
                 }
             }
             print(choosenList)
@@ -120,6 +128,9 @@ extension AdminHomeViewController: UICollectionViewDataSource {
                 longPressure = false
                 choosenList.removeAll { (e) -> Bool in
                     return e == usersMen[indexPath.row]._id
+                }
+                choosenListImage.removeAll { (e) -> Bool in
+                    return e == usersMen[indexPath.row].image
                 }
             }
         } else {

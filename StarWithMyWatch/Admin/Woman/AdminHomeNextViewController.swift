@@ -14,13 +14,16 @@ class AdminHomeNextViewController: BasicViewController {
     @IBOutlet weak var adminHomeNextCollectionView: UICollectionView!
     
     var choosenListWomen : [String] = []
+    var choosenListWomenImage : [String] = []
+    var usersMenChoosenImage : [String] = []
     var usersMenChoosen : [String] = []
     var usersWomen : [User] = []
     
-    class func newInstance(usersMenChoosen : [String], usersWomen : [User]) -> AdminHomeNextViewController {
+    class func newInstance(usersMenChoosen : [String], usersMenChoosenImage : [String], usersWomen : [User]) -> AdminHomeNextViewController {
         let ahnvc = AdminHomeNextViewController()
         ahnvc.usersMenChoosen = usersMenChoosen
         ahnvc.usersWomen = usersWomen
+        ahnvc.usersMenChoosenImage = usersMenChoosenImage
         return ahnvc
     }
     
@@ -36,6 +39,7 @@ class AdminHomeNextViewController: BasicViewController {
         self.adminHomeNextCollectionView.dataSource = self
         self.adminHomeNextCollectionView.register(UINib(nibName: "AdminHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AdminHomeViewController.adminCellId)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Finaliser", style: .done, target: self, action: #selector(nextPage))
+        self.navigationItem.setHidesBackButton(true, animated:true);
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.doubleTapped(gesture:)))
         tap.numberOfTapsRequired = 2
@@ -72,7 +76,7 @@ class AdminHomeNextViewController: BasicViewController {
     
         @objc func nextPage() {
             if(choosenListWomen.count == 2){
-                let next = AdminHomeRecapViewController.newInstance()
+                let next = AdminHomeRecapBisViewController.newInstance(usersMenChoosen : usersMenChoosen, usersMenChoosenImage : usersMenChoosenImage, usersWomenChoosen : choosenListWomen, usersWomenChoosenImage : choosenListWomenImage)
                 self.navigationController?.pushViewController(next, animated: true)
             } else {
                 Toast.show(message: "Vous devez au moins choisir 2 photos", controller: self)
@@ -98,10 +102,13 @@ extension AdminHomeNextViewController: UICollectionViewDataSource {
         cell.image.image = UIImage(data: imageData)
         if(choosenListWomen.count < 2) {
             if(doubletapped){
-                cell.imageLike.image = UIImage(named: "coeurRouge")
+                cell.imageLike.image = UIImage(named: "coeurFondRouge")
                 doubletapped = false
                 if(!choosenListWomen.contains(usersWomen[indexPath.row]._id)){
                     choosenListWomen.append(usersWomen[indexPath.row]._id)
+                }
+                if(!choosenListWomenImage.contains(usersWomen[indexPath.row].image)){
+                    choosenListWomenImage.append(usersWomen[indexPath.row].image)
                 }
             }
             if(longPressure){
@@ -109,6 +116,9 @@ extension AdminHomeNextViewController: UICollectionViewDataSource {
                 longPressure = false
                 choosenListWomen.removeAll { (e) -> Bool in
                     return e == usersWomen[indexPath.row]._id
+                }
+                choosenListWomenImage.removeAll { (e) -> Bool in
+                    return e == usersWomen[indexPath.row].image
                 }
             }
         } else if (choosenListWomen.count == 2) {
@@ -117,6 +127,9 @@ extension AdminHomeNextViewController: UICollectionViewDataSource {
                 longPressure = false
                 choosenListWomen.removeAll { (e) -> Bool in
                     return e == usersWomen[indexPath.row]._id
+                }
+                choosenListWomenImage.removeAll { (e) -> Bool in
+                    return e == usersWomen[indexPath.row].image
                 }
             }
         } else {
