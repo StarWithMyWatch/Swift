@@ -12,6 +12,7 @@ class AdminHomeRecapBisViewController: UIViewController {
 
     @IBOutlet weak var imageMenOne: UIImageView!
     
+    @IBOutlet var reselectImageBtn: UIButton!
     @IBOutlet weak var imageMenTwo: UIImageView!
     @IBOutlet weak var imageWomenOne: UIImageView!
     @IBOutlet weak var imageWomenTwo: UIImageView!
@@ -32,6 +33,11 @@ class AdminHomeRecapBisViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Recapitulation"
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        reselectImageBtn.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        reselectImageBtn.layer.cornerRadius = 0.3 * reselectImageBtn.bounds.size.width
+        reselectImageBtn.clipsToBounds = true
 
         imageMenOne.image = UIImage(data: try! Data(contentsOf: URL(string: usersWomenChoosenImage[0])!))
         imageMenTwo.image = UIImage(data: try! Data(contentsOf: URL(string: usersWomenChoosenImage[1])!))
@@ -42,7 +48,16 @@ class AdminHomeRecapBisViewController: UIViewController {
        
     }
 
-
+    @IBAction func changeButton(_ sender: Any) {
+        WatchService.default.getPhotosMan { (photosMen) in
+            WatchService.default.getPhotosWoman(completion: { (photosWomen) in
+                let next = AdminHomeViewController.newInstance(usersMan : photosMen, usersWoman : photosWomen)
+                self.navigationController?.pushViewController(next, animated: true)
+            })
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

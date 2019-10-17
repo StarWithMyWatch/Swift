@@ -16,6 +16,7 @@
                 <outlet property="imageMenTwo" destination="K3z-LV-kJK" id="9Hl-Uz-AJX"/>
                 <outlet property="imageWomenOne" destination="A3t-ZN-rwe" id="oTj-bV-jW9"/>
                 <outlet property="imageWomenTwo" destination="qmD-7o-pyv" id="LP0-fg-2Fd"/>
+                <outlet property="reselectImageBtn" destination="0RE-gl-4dD" id="ldA-JS-Sw6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,12 +25,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Récapitulatif" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0E-iw-bYn">
-                    <rect key="frame" x="0.0" y="44" width="414" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sélection Femme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9e-IY-lM9">
                     <rect key="frame" x="0.0" y="84" width="414" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -70,6 +65,19 @@
                         <constraint firstAttribute="width" constant="100" id="udd-74-0ho"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RE-gl-4dD">
+                    <rect key="frame" x="128" y="685" width="158" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="N6A-AM-V5k"/>
+                    </constraints>
+                    <state key="normal" title="Reséléctioner">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="changeButton:" destination="-1" eventType="touchUpInside" id="f2o-sL-WvY"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -81,17 +89,18 @@
                 <constraint firstItem="A3t-ZN-rwe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KOk-QX-hkE"/>
                 <constraint firstItem="zhh-A6-wV1" firstAttribute="top" secondItem="K3z-LV-kJK" secondAttribute="bottom" constant="40" id="N1z-nk-BAa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zhh-A6-wV1" secondAttribute="trailing" id="Rzk-wM-4bl"/>
-                <constraint firstItem="P0E-iw-bYn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V4M-b1-4i9"/>
+                <constraint firstItem="0RE-gl-4dD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="128" id="UJ1-VZ-fGS"/>
                 <constraint firstItem="K3z-LV-kJK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WCn-7b-11G"/>
-                <constraint firstItem="K9e-IY-lM9" firstAttribute="top" secondItem="P0E-iw-bYn" secondAttribute="bottom" constant="10" id="f6i-gS-4xq"/>
                 <constraint firstItem="zhh-A6-wV1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fJq-L9-rXK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P0E-iw-bYn" secondAttribute="trailing" id="fo6-XE-CfL"/>
+                <constraint firstItem="0RE-gl-4dD" firstAttribute="centerX" secondItem="qmD-7o-pyv" secondAttribute="centerX" id="mDz-IW-trN"/>
                 <constraint firstItem="ptv-EH-ORm" firstAttribute="top" secondItem="K9e-IY-lM9" secondAttribute="bottom" constant="20" id="mEK-B9-RfD"/>
                 <constraint firstItem="qmD-7o-pyv" firstAttribute="top" secondItem="A3t-ZN-rwe" secondAttribute="bottom" constant="10" id="piA-P8-E4d"/>
                 <constraint firstItem="K3z-LV-kJK" firstAttribute="top" secondItem="ptv-EH-ORm" secondAttribute="bottom" constant="10" id="rkw-co-SFY"/>
-                <constraint firstItem="P0E-iw-bYn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vHM-bh-2O3"/>
+                <constraint firstItem="K9e-IY-lM9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="vKs-lu-VGe"/>
+                <constraint firstItem="0RE-gl-4dD" firstAttribute="top" secondItem="qmD-7o-pyv" secondAttribute="bottom" constant="59" id="zro-Iy-JyX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="47.826086956521742" y="53.571428571428569"/>
         </view>
     </objects>
 </document>
