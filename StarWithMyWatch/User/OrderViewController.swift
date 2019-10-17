@@ -56,15 +56,23 @@ class OrderViewController: BasicViewController {
     }
 
     @IBAction func orderPointsSwitch(_ sender: Any) {
+        
+       if orderPointsSwitch.isOn {
+        textFieldDeactive()
+       }else{
+        textFieldActive()
+
+        }
     }
     
     @IBAction func orderPayButton(_ sender: Any) {
         
 
         if orderPointsSwitch.isOn {
+            
             print("yayayaya")
             let params: [String:Any] = [
-                "code": self.orderCodeTextField.text!,
+                "code": "",
                 "id": self.watch._id
             ]
             WatchService.default.paypoints(params: params) { (error, status) in
@@ -92,6 +100,17 @@ class OrderViewController: BasicViewController {
                 }
             }
         }
+    }
+    
+    func textFieldActive(){
+    //Turn things ON
+        orderCodeTextField.isEnabled = true
+    
+    }
+    
+    func textFieldDeactive(){ //Add anything else
+    //Turn things OFF
+        orderCodeTextField.isEnabled = false
     }
     
     func alertStatus(points:Bool) {

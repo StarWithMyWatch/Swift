@@ -18,7 +18,7 @@ public class WatchService {
         self.baseurl = "http://demo2421622.mockable.io/watchs"
     }
     let headers: HTTPHeaders = [
-       // "x-access-token": Session.default.token,
+       // "Authorization": Session.default.token,
         "Content-Type": "application/json"
     ]
     

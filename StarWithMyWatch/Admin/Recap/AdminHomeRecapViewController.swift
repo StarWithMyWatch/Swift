@@ -23,8 +23,6 @@ class AdminHomeRecapViewController: BasicViewController {
         selectImageButton.layer.cornerRadius = 0.3 * selectImageButton.bounds.size.width
         selectImageButton.clipsToBounds = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(touchUpload))
-
-
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
