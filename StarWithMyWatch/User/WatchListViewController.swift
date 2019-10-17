@@ -11,10 +11,12 @@ import UIKit
 class WatchListViewController: BasicViewController {
     public static let watchCellId = "WATCH_CELL_ID"
     var watchs: [Watch]!
+    var user: UserConnect!
 
     @IBOutlet var watchTableView: UITableView!
-    class func newInstance(watchs: [Watch]) -> WatchListViewController{
+    class func newInstance(watchs: [Watch], user: UserConnect) -> WatchListViewController{
         let elvc = WatchListViewController()
+        elvc.user = user
         elvc.watchs = watchs
         return elvc
     }
@@ -30,7 +32,7 @@ class WatchListViewController: BasicViewController {
     }
     
     @objc func touchUpload() {
-        let insert = AdminHomeRecapViewController.newInstance()
+        let insert = AdminHomeRecapViewController.newInstance(user: self.user)
         self.navigationController?.pushViewController(insert, animated: true)
     }
 
@@ -65,7 +67,7 @@ extension WatchListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let watch = WatchDetailViewController.newInstance(watch: watchs[indexPath.row])
+        let watch = WatchDetailViewController.newInstance(watch: watchs[indexPath.row], user: self.user)
         self.navigationController?.pushViewController(watch, animated: true)
     }
     

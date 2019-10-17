@@ -13,8 +13,11 @@ class AdminHomeRecapViewController: BasicViewController {
     
     @IBOutlet var selectImageButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    class func newInstance() -> AdminHomeRecapViewController {
+    
+    var user : UserConnect!
+    class func newInstance(user: UserConnect) -> AdminHomeRecapViewController {
         let ahrvc = AdminHomeRecapViewController()
+        ahrvc.user = user
         return ahrvc
     }
     
@@ -40,7 +43,7 @@ class AdminHomeRecapViewController: BasicViewController {
             WatchService.default.uploadImage(params: params, image: image!) { (result) in
                 print("test")
                 WatchService.default.getWatchs(completion: { (watchs) in
-                    let insert = WatchListViewController.newInstance(watchs: watchs)
+                    let insert = WatchListViewController.newInstance(watchs: watchs, user: self.user)
                     self.navigationController?.pushViewController(insert, animated: true)
                 })
             }

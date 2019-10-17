@@ -12,9 +12,11 @@ class WatchDetailViewController: BasicViewController {
 
     
     var watch: Watch!
+    var user: UserConnect!
     
-    class func newInstance(watch: Watch) -> WatchDetailViewController {
+    class func newInstance(watch: Watch, user: UserConnect) -> WatchDetailViewController {
         let elvc = WatchDetailViewController()
+        elvc.user = user
         elvc.watch = watch
         return elvc
     }
@@ -52,7 +54,7 @@ class WatchDetailViewController: BasicViewController {
     }
     
     @IBAction func detailOrderButton(_ sender: Any) {
-        let watch = OrderViewController.newInstance(watch: self.watch)
+        let watch = OrderViewController.newInstance(watch: self.watch, user: self.user)
         self.navigationController?.pushViewController(watch, animated: true)
     }
     

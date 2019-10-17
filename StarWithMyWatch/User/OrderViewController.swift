@@ -20,9 +20,11 @@ class OrderViewController: BasicViewController {
     @IBOutlet var orderPayButton: UIButton!
     @IBOutlet var orderPointsSwitch: UISwitch!
     var watch: Watch!
+    var user: UserConnect!
     
-    class func newInstance(watch: Watch) -> OrderViewController {
+    class func newInstance(watch: Watch, user: UserConnect) -> OrderViewController {
         let elvc = OrderViewController()
+        elvc.user = user
         elvc.watch = watch
         return elvc
     }
@@ -39,7 +41,7 @@ class OrderViewController: BasicViewController {
         orderImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
         orderImageView.layer.shadowRadius = 1
         orderImageView.layer.masksToBounds = false
-
+        print(user as UserConnect)
         displayData()
         super.viewDidLoad()
 
@@ -118,7 +120,7 @@ class OrderViewController: BasicViewController {
             let alert = UIAlertController(title: "BRAVO", message: "Votre achat a bien été effectué avec vos points", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Merci", style: .default, handler: { (action) -> Void in
                 WatchService.default.getWatchs { (watchs) in
-                    let next = WatchListViewController.newInstance(watchs:watchs)
+                    let next = WatchListViewController.newInstance(watchs:watchs, user: self.user)
                     self.navigationController?.pushViewController(next, animated: true)
                 }
             })
@@ -128,7 +130,7 @@ class OrderViewController: BasicViewController {
             let alert = UIAlertController(title: "BRAVO", message: "Votre achat a bien été effectué avec votre cash", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Merci", style: .default, handler: { (action) -> Void in
                 WatchService.default.getWatchs { (watchs) in
-                    let next = WatchListViewController.newInstance(watchs:watchs)
+                    let next = WatchListViewController.newInstance(watchs:watchs,user: self.user)
                     self.navigationController?.pushViewController(next, animated: true)
                 }
             })

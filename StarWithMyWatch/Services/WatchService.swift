@@ -41,6 +41,34 @@ public class WatchService {
         }
     }
     
+    public func getUser(email: String, password: String, completion: @escaping (UserConnect) -> Void) {
+        
+        let params = [
+            "email": email,
+            "password": password
+            ] as [String : Any]
+        
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/login", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (res) in
+            
+            //print("hehe\(res)")
+            guard let result = res.value as? [String:Any],
+                let token = result["token"] as? String,
+                let user = result["user"] as? [String:Any],
+                let id = user["_id"] as? String,
+                let firstName = user["firstName"] as? String,
+                let lastName = user["lastName"] as? String,
+                let email = user["email"] as? String,
+                let type = user["type"] as? String,
+                let gender = user["sex"] as? String else {return}
+            print(email)
+            
+            let newUser = UserConnect(_id: id, firstName: firstName, lastName: lastName, email: email, image: "", gender: gender, type: type, token: token)
+            completion(newUser)
+            
+            
+        }
+    }
+    
     public func paycash(params: [String:Any], completion: @escaping (String,Int) -> Void) {
         
         Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
@@ -117,6 +145,22 @@ public class WatchService {
                          encodingCompletion: { encodingResult in
                             completion(encodingResult)
         })
+    }
+    
+    public func addUser(firstName: String, lastName: String, email: String, mdp: String, gender: String) {
+        
+        let params = [
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "password": mdp,
+            "sex": gender
+            ] as [String : Any]
+        
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/signup", method: .post, parameters: params, encoding: JSONEncoding.default).responseString { (res) in
+            print(res)
+            //completion(res.response?.statusCode == 201)
+        }
     }
     
 }

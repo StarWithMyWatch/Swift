@@ -13,6 +13,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var identifiantTextField: UITextField!
     @IBOutlet weak var mdpTextField: UITextField!
     
+    class func newInstance() -> HomeViewController {
+        let ahvc = HomeViewController()
+        return ahvc
+    }
+    
     @IBOutlet var btnUser: UIButton!
     @IBOutlet var btnAdmin: UIButton!
     override func viewDidLoad() {
@@ -22,11 +27,12 @@ class HomeViewController: UIViewController {
         btnAdmin.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         btnAdmin.layer.cornerRadius = 0.3 * btnAdmin.bounds.size.width
         btnAdmin.clipsToBounds = true
+        self.navigationItem.setHidesBackButton(true, animated:true);
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+/*
     @IBAction func btnAdminConnect(_ sender: Any) {
         WatchService.default.getPhotosMan { (photosMen) in
             WatchService.default.getPhotosWoman(completion: { (photosWomen) in
@@ -37,16 +43,32 @@ class HomeViewController: UIViewController {
         }
         
     }
+ */
     @IBAction func btnSeConnecter(_ sender: UIButton) {
-        WatchService.default.getWatchs { (watchs) in
-            let next = WatchListViewController.newInstance(watchs:watchs)
-            self.navigationController?.pushViewController(next, animated: true)
-        }
-       
         
+        WatchService.default.getUser(email: self.identifiantTextField.text!, password: self.mdpTextField.text!, completion: { (user) in
+            if user.type == "user" {
+                WatchService.default.getWatchs(completion: { (watchs) in
+                    let next = WatchListViewController.newInstance(watchs:watchs, user: user)
+                    self.navigationController?.pushViewController(next, animated: true)
+                })
+            } else {
+                WatchService.default.getPhotosMan(completion: { (photosMen) in
+                    WatchService.default.getPhotosWoman(completion: { (photosWomen) in
+                        let next = AdminHomeViewController.newInstance(usersMan : photosMen, usersWoman : photosWomen)
+                        self.navigationController?.pushViewController(next, animated: true)
+                    })
+                })
+            }
+        })
+            
         
     }
     
+    @IBAction func btnInscrire(_ sender: UIButton) {
+        let next = SignUpViewController.newInstance()
+        self.navigationController?.pushViewController(next, animated: true)
+    }
     /*
     // MARK: - Navigation
 
