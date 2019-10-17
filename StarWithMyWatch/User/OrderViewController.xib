@@ -44,12 +44,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-Rh-W3R">
-                    <rect key="frame" x="159" y="529" width="96" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2hj-3a-QDM">
                     <rect key="frame" x="259" y="642" width="51" height="31"/>
                     <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,12 +73,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPy-nU-zJm">
-                    <rect key="frame" x="182" y="509" width="50" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-Rh-W3R">
+                    <rect key="frame" x="159" y="541" width="96" height="30"/>
                     <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -96,10 +90,8 @@
                 <constraint firstItem="1Eq-mj-F0c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="259" id="IjN-MN-dPj"/>
                 <constraint firstItem="e8f-t8-jJz" firstAttribute="top" secondItem="dnl-kp-3br" secondAttribute="bottom" constant="69" id="MDf-bV-Eci"/>
                 <constraint firstItem="rSy-eh-96N" firstAttribute="top" secondItem="e8f-t8-jJz" secondAttribute="bottom" constant="73" id="MlC-Tu-7dp"/>
-                <constraint firstItem="DPy-nU-zJm" firstAttribute="centerX" secondItem="rSy-eh-96N" secondAttribute="centerX" id="OmP-OO-dSe"/>
-                <constraint firstItem="DPy-nU-zJm" firstAttribute="top" secondItem="rSy-eh-96N" secondAttribute="bottom" constant="21" id="Q5k-q2-EMr"/>
                 <constraint firstItem="2hj-3a-QDM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="598" id="Thk-0f-0gv"/>
-                <constraint firstItem="dVC-Rh-W3R" firstAttribute="top" secondItem="rSy-eh-96N" secondAttribute="bottom" constant="41" id="a4v-Jj-L4E"/>
+                <constraint firstItem="dVC-Rh-W3R" firstAttribute="top" secondItem="rSy-eh-96N" secondAttribute="bottom" constant="53" id="a4v-Jj-L4E"/>
                 <constraint firstItem="ZYy-kB-wJV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="38" id="aDa-Zv-FvH"/>
                 <constraint firstItem="dVC-Rh-W3R" firstAttribute="centerX" secondItem="ZYy-kB-wJV" secondAttribute="centerX" constant="97" id="dnD-sK-3Ao"/>
                 <constraint firstItem="1Eq-mj-F0c" firstAttribute="top" secondItem="2hj-3a-QDM" secondAttribute="bottom" constant="8" symbolic="YES" id="flc-YE-hhw"/>

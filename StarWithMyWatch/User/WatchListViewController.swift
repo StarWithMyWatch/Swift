@@ -26,11 +26,12 @@ class WatchListViewController: UIViewController {
         self.watchTableView.register(UINib(nibName: "WatchListTableViewCell", bundle: nil), forCellReuseIdentifier: WatchListViewController.watchCellId)
         self.navigationItem.setHidesBackButton(true, animated:true);
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchUpload))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
 
     }
     
     @objc func touchUpload() {
-        let insert = AdminHomeRecapViewController.newInstance(usersMen: ["test"], usersWomen: ["test"])
+        let insert = AdminHomeRecapViewController.newInstance()
         self.navigationController?.pushViewController(insert, animated: true)
     }
 

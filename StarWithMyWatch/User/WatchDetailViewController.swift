@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchDetailViewController: UIViewController {
+class WatchDetailViewController: BasicViewController {
 
     
     var watch: Watch!
@@ -36,6 +36,7 @@ class WatchDetailViewController: UIViewController {
         detailImageView.layer.shadowRadius = 1
         detailImageView.layer.masksToBounds = false
         displayData()
+
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

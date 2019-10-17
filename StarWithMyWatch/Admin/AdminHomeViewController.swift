@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminHomeViewController: UIViewController {
+class AdminHomeViewController: BasicViewController{
 
     @IBOutlet weak var adminHomeCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -41,6 +41,7 @@ class AdminHomeViewController: UIViewController {
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(gesture:)))
         lpgr.minimumPressDuration = 0.5
         adminHomeCollectionView.addGestureRecognizer(lpgr)
+
         
         
         // Do any additional setup after loading the view.

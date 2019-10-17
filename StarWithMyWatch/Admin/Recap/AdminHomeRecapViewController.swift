@@ -8,20 +8,34 @@
 
 import UIKit
 
-class AdminHomeRecapViewController: UIViewController {
+class AdminHomeRecapViewController: BasicViewController {
 
     
+    @IBOutlet var selectImageButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    class func newInstance(usersMen : [String], usersWomen : [String]) -> AdminHomeRecapViewController {
+    class func newInstance() -> AdminHomeRecapViewController {
         let ahrvc = AdminHomeRecapViewController()
         return ahrvc
     }
     
     override func viewDidLoad() {
+        selectImageButton.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        selectImageButton.layer.cornerRadius = 0.3 * selectImageButton.bounds.size.width
+        selectImageButton.clipsToBounds = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(touchUpload))
+
+
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func touchUpload() {
+        //let insert = AdminHomeRecapViewController.newInstance(usersMen: ["test"], usersWomen: ["test"])
+        //self.navigationController?.pushViewController(insert, animated: true)
+    }
+    
+    
     
     @IBAction func selectImage(_ sender: Any) {
         let image = UIImagePickerController()
@@ -53,6 +67,7 @@ extension AdminHomeRecapViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = image
+            
         } else {
             print("ERROR IMAGE")
         }

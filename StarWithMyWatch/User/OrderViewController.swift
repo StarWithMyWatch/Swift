@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderViewController: UIViewController {
+class OrderViewController: BasicViewController {
 
     
     
@@ -39,6 +39,7 @@ class OrderViewController: UIViewController {
         orderImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
         orderImageView.layer.shadowRadius = 1
         orderImageView.layer.masksToBounds = false
+
         displayData()
         super.viewDidLoad()
 
@@ -50,8 +51,8 @@ class OrderViewController: UIViewController {
         let imageData = try! Data(contentsOf: imageURL!)
         self.orderImageView.image = UIImage(data: imageData)
         self.orderNameLabel.text = self.watch.nom
-        self.orderPriceLabel.text = "\(self.watch.prix)€"
-        print(self.watch._id)
+        self.orderPriceLabel.text = "Prix: \(self.watch.prix)€"
+        
     }
 
     @IBAction func orderPointsSwitch(_ sender: Any) {
@@ -63,7 +64,7 @@ class OrderViewController: UIViewController {
         if orderPointsSwitch.isOn {
             print("yayayaya")
             let params: [String:Any] = [
-                "code": self.orderCodeTextField.text,
+                "code": self.orderCodeTextField.text!,
                 "id": self.watch._id
             ]
             WatchService.default.paypoints(params: params) { (error, status) in
@@ -78,7 +79,7 @@ class OrderViewController: UIViewController {
         }else{
             print("yoyoyo")
             let params: [String:Any] = [
-                "code": self.orderCodeTextField.text,
+                "code": self.orderCodeTextField.text!,
                 "id": self.watch._id
             ]
             WatchService.default.paycash(params: params) { (error, status) in

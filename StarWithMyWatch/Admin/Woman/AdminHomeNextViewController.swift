@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminHomeNextViewController: UIViewController {
+class AdminHomeNextViewController: BasicViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var adminHomeNextCollectionView: UICollectionView!
@@ -44,6 +44,7 @@ class AdminHomeNextViewController: UIViewController {
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(gesture:)))
         lpgr.minimumPressDuration = 0.5
         adminHomeNextCollectionView.addGestureRecognizer(lpgr)
+
     }
     
         @objc func doubleTapped(gesture: UILongPressGestureRecognizer!) {
@@ -71,7 +72,7 @@ class AdminHomeNextViewController: UIViewController {
     
         @objc func nextPage() {
             if(choosenListWomen.count == 2){
-                let next = AdminHomeRecapViewController.newInstance(usersMen: usersMenChoosen, usersWomen : choosenListWomen)
+                let next = AdminHomeRecapViewController.newInstance()
                 self.navigationController?.pushViewController(next, animated: true)
             } else {
                 Toast.show(message: "Vous devez au moins choisir 2 photos", controller: self)

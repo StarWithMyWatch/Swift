@@ -44,8 +44,7 @@ public class WatchService {
     public func paycash(params: [String:Any], completion: @escaping (String,Int) -> Void) {
         
         Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
-            guard let session = res.value as? [String:Any],
-                let status = res.response?.statusCode else { return }
+            guard let status = res.response?.statusCode else { return }
             if(status == 200) {
             completion("ca passe",status)
             
@@ -59,8 +58,7 @@ public class WatchService {
     public func paypoints(params: [String:Any], completion: @escaping (String,Int) -> Void) {
         
         Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
-            guard let session = res.value as? [String:Any],
-                let status = res.response?.statusCode else { return }
+            guard let status = res.response?.statusCode else { return }
             if(status == 200) {
                 completion("ca passe",status)
                 
