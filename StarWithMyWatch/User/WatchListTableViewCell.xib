@@ -25,15 +25,15 @@
                             <constraint firstAttribute="width" constant="200" id="bM0-Xv-NK4"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoO-ok-sDN">
-                        <rect key="frame" x="139" y="79" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoO-ok-sDN">
+                        <rect key="frame" x="144" y="94" width="48" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-N0-FJj">
-                        <rect key="frame" x="20" y="79" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-N0-FJj">
+                        <rect key="frame" x="20" y="94" width="48" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -42,11 +42,13 @@
                 <constraints>
                     <constraint firstItem="Gqc-N0-FJj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3Pi-aV-dgO"/>
                     <constraint firstItem="hOH-Eq-oHL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="96C-yl-oH8"/>
-                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="baseline" secondItem="ZoO-ok-sDN" secondAttribute="baseline" id="S48-bQ-rim"/>
+                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="39" id="RoB-Qe-8XM"/>
+                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="baseline" secondItem="ZoO-ok-sDN" secondAttribute="baseline" constant="-1" id="S48-bQ-rim"/>
+                    <constraint firstItem="ZoO-ok-sDN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="39" id="VMT-S0-Db9"/>
                     <constraint firstAttribute="trailing" secondItem="hOH-Eq-oHL" secondAttribute="trailing" id="dUw-fS-9Bd"/>
-                    <constraint firstItem="Gqc-N0-FJj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="ddT-5S-bGP"/>
                     <constraint firstItem="hOH-Eq-oHL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fZy-Pb-EpC"/>
-                    <constraint firstItem="ZoO-ok-sDN" firstAttribute="leading" secondItem="Gqc-N0-FJj" secondAttribute="trailing" constant="77" id="hNj-dC-Tph"/>
+                    <constraint firstItem="ZoO-ok-sDN" firstAttribute="leading" secondItem="Gqc-N0-FJj" secondAttribute="trailing" constant="76" id="hNj-dC-Tph"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ZoO-ok-sDN" secondAttribute="bottom" constant="39" id="jR7-Vk-ztf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

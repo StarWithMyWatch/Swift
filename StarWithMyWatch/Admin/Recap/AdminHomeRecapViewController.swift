@@ -31,8 +31,25 @@ class AdminHomeRecapViewController: BasicViewController {
     }
     
     @objc func touchUpload() {
-        //let insert = AdminHomeRecapViewController.newInstance(usersMen: ["test"], usersWomen: ["test"])
-        //self.navigationController?.pushViewController(insert, animated: true)
+        
+        
+        let date = Date().timeIntervalSinceReferenceDate
+        let params = [
+            "name":"\(date)"
+        ]
+        let image = imageView.image
+        if (image != nil) {
+            WatchService.default.uploadImage(params: params, image: image!) { (result) in
+                print("test")
+                WatchService.default.getWatchs(completion: { (watchs) in
+                    let insert = WatchListViewController.newInstance(watchs: watchs)
+                    self.navigationController?.pushViewController(insert, animated: true)
+                })
+            }
+        }else{
+            Toast.show(message: "Veillez sélectionner une image ", controller: self)
+        }
+        
     }
     
     

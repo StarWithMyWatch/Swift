@@ -48,7 +48,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="9mL-kg-FQD"/>
                     </constraints>
-                    <state key="normal" title="Se connecter en tant que user">
+                    <state key="normal" title="Se connecter en tant qu'utilisateur">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

@@ -33,7 +33,7 @@ class AdminHomeNextViewController: BasicViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = "Sélection Homme"
+        titleLabel.text = "Sélection Femme"
         
         self.adminHomeNextCollectionView.delegate = self
         self.adminHomeNextCollectionView.dataSource = self

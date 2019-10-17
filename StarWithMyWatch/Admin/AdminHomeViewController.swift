@@ -29,7 +29,7 @@ class AdminHomeViewController: BasicViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Sélection Femme"
+        titleLabel.text = "Sélection Homme"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Suivant", style: .done, target: self, action: #selector(nextPageWoman))
         self.adminHomeCollectionView.delegate = self
         self.adminHomeCollectionView.dataSource = self

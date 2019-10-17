@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchListViewController: UIViewController {
+class WatchListViewController: BasicViewController {
     public static let watchCellId = "WATCH_CELL_ID"
     var watchs: [Watch]!
 
@@ -26,7 +26,6 @@ class WatchListViewController: UIViewController {
         self.watchTableView.register(UINib(nibName: "WatchListTableViewCell", bundle: nil), forCellReuseIdentifier: WatchListViewController.watchCellId)
         self.navigationItem.setHidesBackButton(true, animated:true);
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchUpload))
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
 
     }
     

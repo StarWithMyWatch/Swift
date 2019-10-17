@@ -101,5 +101,23 @@ public class WatchService {
         
     }
     
+    public func uploadImage(params: [String:String], image: UIImage, completion: @escaping (SessionManager.MultipartFormDataEncodingResult) -> Void) {
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            if let imageData = image.jpegData(compressionQuality: 1) {
+                guard var imageName = params["name"] else { return }
+                imageName += ".png"
+                print(imageName)
+                multipartFormData.append(imageData, withName: "image", fileName: imageName, mimeType: "image/png")
+            }},
+                         usingThreshold:UInt64.init(),
+                         to: "url",
+                         method: .post,
+                         headers: headers,
+                         encodingCompletion: { encodingResult in
+                            completion(encodingResult)
+        })
+    }
+    
 }
 

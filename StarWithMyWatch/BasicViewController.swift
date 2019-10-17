@@ -14,6 +14,7 @@ open class BasicViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = UIColor.black;
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
+        self.navigationItem.title = "Augarde"
 
     }
 }

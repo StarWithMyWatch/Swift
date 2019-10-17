@@ -69,6 +69,7 @@ class OrderViewController: BasicViewController {
             ]
             WatchService.default.paypoints(params: params) { (error, status) in
                 print(status)
+                print(error)
                 if(status == 200){
                     self.alertStatus(points: true)
                 }else{
