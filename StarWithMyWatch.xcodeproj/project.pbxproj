@@ -39,6 +39,8 @@
 		0CBD6828235895EE0060771B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD6826235895EE0060771B /* SignUpViewController.swift */; };
 		0CBD6829235895EE0060771B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD6827235895EE0060771B /* SignUpViewController.xib */; };
 		0CBD682B23589E110060771B /* UserConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD682A23589E110060771B /* UserConnect.swift */; };
+		0CBD682F2359DE7F0060771B /* AdminBigScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD682D2359DE7F0060771B /* AdminBigScreenViewController.swift */; };
+		0CBD68302359DE7F0060771B /* AdminBigScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD682E2359DE7F0060771B /* AdminBigScreenViewController.xib */; };
 		3F44E30BE8A4BC70F83C9A85 /* Pods_StarWithMyWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */; };
 		7EC89AA594D5CB2CEB45AC78 /* Pods_StarWithMyWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D92066F3377070F74BA7A0 /* Pods_StarWithMyWatch.framework */; };
 		90279D5ECB5AED729D5A258D /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41C1E4AF4A7D8C36D2B39D3 /* Pods_StarWithMyWatch_StarWithMyWatchUITests.framework */; };
@@ -102,6 +104,8 @@
 		0CBD6826235895EE0060771B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0CBD6827235895EE0060771B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		0CBD682A23589E110060771B /* UserConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConnect.swift; sourceTree = "<group>"; };
+		0CBD682D2359DE7F0060771B /* AdminBigScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminBigScreenViewController.swift; sourceTree = "<group>"; };
+		0CBD682E2359DE7F0060771B /* AdminBigScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminBigScreenViewController.xib; sourceTree = "<group>"; };
 		25D24E8A714E382D81C1BB6D /* Pods-StarWithMyWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatch.release.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatch/Pods-StarWithMyWatch.release.xcconfig"; sourceTree = "<group>"; };
 		2A99F766DFC9BC735E347F47 /* Pods-StarWithMyWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWithMyWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-StarWithMyWatchTests/Pods-StarWithMyWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FB5403630D2AB11633271AA /* Pods_StarWithMyWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWithMyWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +211,7 @@
 		0CBD67CE235628A10060771B /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				0CBD682C2359DE540060771B /* BigScreenImage */,
 				0CBD681A235785810060771B /* Recap */,
 				0CBD681223575A5A0060771B /* Woman */,
 				0CBD67DB2357038B0060771B /* AdminHomeViewController.swift */,
@@ -276,6 +281,15 @@
 				0CBD6827235895EE0060771B /* SignUpViewController.xib */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		0CBD682C2359DE540060771B /* BigScreenImage */ = {
+			isa = PBXGroup;
+			children = (
+				0CBD682D2359DE7F0060771B /* AdminBigScreenViewController.swift */,
+				0CBD682E2359DE7F0060771B /* AdminBigScreenViewController.xib */,
+			);
+			path = BigScreenImage;
 			sourceTree = "<group>";
 		};
 		375DDC3C877A807E91A7BD6E /* Pods */ = {
@@ -424,6 +438,7 @@
 				0CBD680B23574AE60060771B /* WatchListViewController.xib in Resources */,
 				0CBD67E2235704A70060771B /* AdminHomeCollectionViewCell.xib in Resources */,
 				0CBD6829235895EE0060771B /* SignUpViewController.xib in Resources */,
+				0CBD68302359DE7F0060771B /* AdminBigScreenViewController.xib in Resources */,
 				0CBD67A7235610260060771B /* LaunchScreen.storyboard in Resources */,
 				0CBD680F23574AE60060771B /* WatchListTableViewCell.xib in Resources */,
 				0CBD67A4235610260060771B /* Assets.xcassets in Resources */,
@@ -563,6 +578,7 @@
 				0CBD679F235610250060771B /* ViewController.swift in Sources */,
 				0CBD682323587ABE0060771B /* AdminHomeRecapBisViewController.swift in Sources */,
 				9617521B23575B2100F43C3C /* Watch.swift in Sources */,
+				0CBD682F2359DE7F0060771B /* AdminBigScreenViewController.swift in Sources */,
 				0CBD679D235610250060771B /* AppDelegate.swift in Sources */,
 				0CBD67CC235611010060771B /* HomeViewController.swift in Sources */,
 				0CBD6820235793C50060771B /* User.swift in Sources */,

@@ -50,7 +50,9 @@ class AdminHomeViewController: BasicViewController{
         lpgr.minimumPressDuration = 0.5
         adminHomeCollectionView.addGestureRecognizer(lpgr)
 
-        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwiped(gesture:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.adminHomeCollectionView.addGestureRecognizer(swipeLeft)
         
         // Do any additional setup after loading the view.
     }
@@ -73,6 +75,18 @@ class AdminHomeViewController: BasicViewController{
         if let indexPath = self.adminHomeCollectionView.indexPathForItem(at: p) {
             longPressure = true
             adminHomeCollectionView.reloadItems(at: [indexPath])
+        } else {
+            print("no index path")
+        }
+    }
+    
+    @objc func leftSwiped(gesture: UISwipeGestureRecognizer!) {
+        print("left swiped")
+        let p = gesture.location(in: self.adminHomeCollectionView)
+        if let indexPath = self.adminHomeCollectionView.indexPathForItem(at: p) {
+            longPressure = true
+            goToDetails(indexPath: indexPath)
+            // adminHomeCollectionView.reloadItems(at: [indexPath])
         } else {
             print("no index path")
         }
@@ -106,6 +120,7 @@ extension AdminHomeViewController: UICollectionViewDataSource {
         let urlImage = URL(string: usersMen[indexPath.row].image)
         let imageData = try! Data(contentsOf: urlImage!)
         cell.image.image = UIImage(data: imageData)
+        
         if(choosenList.count < 2) {
             if(doubletapped){
                 cell.imageLike.image = UIImage(named: "coeurFondRouge")
@@ -148,25 +163,16 @@ extension AdminHomeViewController: UICollectionViewDataSource {
         return cell
     }
     
-    //    func setupCell(indexPath: IndexPath, cell: adminHomeCollectionViewCell) {
-    //        let imageURL = URL(string: self.pokemonSearch[indexPath.row].sprite)
-    //        let imageData = try! Data(contentsOf: imageURL!)
-    //        cell.image.image = UIImage(data: imageData)
-    //        cell.title.text = "\(self.pokemonSearch[indexPath.row].name)"
-    //        cell.id.text = "#\(self.pokemonSearch[indexPath.row].id)"
-    //    }
     
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        goToDetails(indexPath: indexPath)
-    //    }
-    //
-    //    func goToDetails(indexPath: IndexPath) {
-    //        let idChoosen = self.pokemonSearch[indexPath.row].id
-    //        let nameChoose = self.pokemonSearch[indexPath.row].name
-    //        let imageChoosen = self.pokemonSearch[indexPath.row].sprite
-    //        let typesChoosen = self.pokemonSearch[indexPath.row].types
-    //        selectSound()
-    //        let next = PokeDetailViewController.newInstance(pokemon: Pokemon(id: idChoosen, name: nameChoose, sprite: imageChoosen, types: typesChoosen), evolution: 0)
-    //        self.navigationController?.pushViewController(next, animated: true)
-    //    }
+    
+//        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//            goToDetails(indexPath: indexPath)
+//        }
+    
+        func goToDetails(indexPath: IndexPath) {
+            let imageChoosen = self.usersMen[indexPath.row].image
+            let emailChoosen = self.usersMen[indexPath.row].email
+            let next = AdminBigScreenViewController.newInstance(image: imageChoosen, email : emailChoosen)
+            self.navigationController?.pushViewController(next, animated: true)
+        }
 }

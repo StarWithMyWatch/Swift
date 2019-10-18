@@ -48,6 +48,10 @@ class AdminHomeNextViewController: BasicViewController {
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(gesture:)))
         lpgr.minimumPressDuration = 0.5
         adminHomeNextCollectionView.addGestureRecognizer(lpgr)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.leftSwiped(gesture:)))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.adminHomeNextCollectionView.addGestureRecognizer(swipeLeft)
 
     }
     
@@ -73,6 +77,18 @@ class AdminHomeNextViewController: BasicViewController {
                 print("no index path")
             }
         }
+    
+    @objc func leftSwiped(gesture: UISwipeGestureRecognizer!) {
+        print("left swiped")
+        let p = gesture.location(in: self.adminHomeNextCollectionView)
+        if let indexPath = self.adminHomeNextCollectionView.indexPathForItem(at: p) {
+            longPressure = true
+            goToDetails(indexPath: indexPath)
+            // adminHomeCollectionView.reloadItems(at: [indexPath])
+        } else {
+            print("no index path")
+        }
+    }
     
         @objc func nextPage() {
             if(choosenListWomen.count == 2){
@@ -138,6 +154,13 @@ extension AdminHomeNextViewController: UICollectionViewDataSource {
         
         //setupCell(indexPath: indexPath, cell: cell)
         return cell
+    }
+    
+    func goToDetails(indexPath: IndexPath) {
+        let imageChoosen = self.usersWomen[indexPath.row].image
+        let emailChoosen = self.usersWomen[indexPath.row].email
+        let next = AdminBigScreenViewController.newInstance(image: imageChoosen, email: emailChoosen)
+        self.navigationController?.pushViewController(next, animated: true)
     }
     
     
