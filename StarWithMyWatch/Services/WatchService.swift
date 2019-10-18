@@ -175,7 +175,7 @@ public class WatchService {
         }
     }
     
-    public func chooseStar(emailMen: [String], emailWomen: [String]) {
+    public func chooseStar(emailMen: [String], emailWomen: [String], completion: @escaping (Int) -> Void) {
         
         let params = [
             "emailMenOne": emailMen[0],
@@ -186,8 +186,15 @@ public class WatchService {
         
         Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/star", method: .put, parameters: params, encoding: JSONEncoding.default).responseString { (res) in
             print("Reponse json \(res)")
+            if ((res.response!.statusCode as? Int) == 200){
+                completion(200)
+            } else {
+                completion(201)
+            }
             //completion(res.response?.statusCode == 201)
         }
+        
+        
     }
     
 }

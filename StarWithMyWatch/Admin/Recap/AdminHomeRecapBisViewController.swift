@@ -64,13 +64,24 @@ class AdminHomeRecapBisViewController: UIViewController {
     
     
     @IBAction func validerButton(_ sender: UIButton) {
-        WatchService.default.chooseStar(emailMen: usersMenChoosen, emailWomen: usersWomenChoosen)
-        let alert = UIAlertController(title: "Merci !", message: "Les gagnants ont étés choisi.\nLe concours est clos.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            let next = HomeViewController.newInstance()
-            self.navigationController?.pushViewController(next, animated: true)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        WatchService.default.chooseStar(emailMen: usersMenChoosen, emailWomen: usersWomenChoosen, completion: { status in
+            if(status == 200) {
+                let alert = UIAlertController(title: "Désolé !", message: "Le concours est clos.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    let next = HomeViewController.newInstance()
+                    self.navigationController?.pushViewController(next, animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Merci !", message: "Les gagnants ont étés choisi.\nLe concours est clos.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    let next = HomeViewController.newInstance()
+                    self.navigationController?.pushViewController(next, animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
+        
     }
     
     /*

@@ -36,6 +36,12 @@ class AdminHomeViewController: BasicViewController{
         self.adminHomeCollectionView.register(UINib(nibName: "AdminHomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: AdminHomeViewController.adminCellId)
         self.navigationItem.setHidesBackButton(true, animated:true);
         
+        let alert = UIAlertController(title: "Consignes", message: "Double-Tab pour liker.\nRester appuyer pour disliker.\nMaximun de like par section : 2", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.doubleTapped(gesture:)))
         tap.numberOfTapsRequired = 2
         adminHomeCollectionView.addGestureRecognizer(tap)
