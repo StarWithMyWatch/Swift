@@ -49,7 +49,7 @@ public class WatchService {
             
             print("hehe\(res.response!.statusCode)")
             if ((res.response!.statusCode as? Int) == 401){
-                completion(UserConnect(_id: "er", firstName: "er", lastName: "er", email: "er", image: "er", gender: "er", type: "er", token: "er"), (res.response!.statusCode as? Int)!)
+                completion(UserConnect(_id: "er", firstName: "er", lastName: "er", email: "er", image: "er", gender: "er", type: "er", token: "er",point: 14), (res.response!.statusCode as? Int)!)
             }
             
             guard let result = res.value as? [String:Any],
@@ -61,22 +61,25 @@ public class WatchService {
                 let lastName = user["lastName"] as? String,
                 let email = user["email"] as? String,
                 let type = user["type"] as? String,
-                let gender = user["sex"] as? String else {return}
-            print(status)
+                let gender = user["sex"] as? String,
+            let point = user["points"] as? Int
+                else {return}
+            print(email)
             
-            let newUser = UserConnect(_id: id, firstName: firstName, lastName: lastName, email: email, image: "", gender: gender, type: type, token: token)
+            let newUser = UserConnect(_id: id, firstName: firstName, lastName: lastName, email: email, image: "", gender: gender, type: type, token: token,point: point)
             completion(newUser, status)
+            print(newUser)
             
             
         }
     }
     
     public func paycash(header:String,params: [String:Any], completion: @escaping (String,Int) -> Void) {
-        let headers: HTTPHeaders = [
+        /*let headers: HTTPHeaders = [
             "Authorization": header,
             "Content-Type": "application/json"
-        ]
-        Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
+        ]*/
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/paidWithMany",method: .put, parameters: params,encoding: JSONEncoding.default/*, headers:headers*/).responseJSON { (res) in
             guard let status = res.response?.statusCode else { return }
             if(status == 200) {
             completion("ca passe",status)
@@ -89,11 +92,11 @@ public class WatchService {
         completion("cest ps dedans",200)
     }
     public func paypoints(header:String,params: [String:Any], completion: @escaping (String,Int) -> Void) {
-        let headers: HTTPHeaders = [
+        /*let headers: HTTPHeaders = [
             "Authorization": header,
             "Content-Type": "application/json"
-        ]
-        Alamofire.request("link de payement ",method: .post, parameters: params,encoding: JSONEncoding.default, headers:headers).responseJSON { (res) in
+        ]*/
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/paidWithPoints",method: .put, parameters: params,encoding: JSONEncoding.default/*, headers:headers*/).responseJSON { (res) in
             guard let status = res.response?.statusCode else { return }
             if(status == 200) {
                 completion("ca passe",status)
@@ -108,7 +111,7 @@ public class WatchService {
     
     public func getPhotosMan(completion: @escaping ([User]) -> Void) {
         
-        Alamofire.request("http://localhost:3000/api/user/hommes").responseJSON { (res) in
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/hommes").responseJSON { (res) in
             
             guard let result = res.value as? [String:Any],
                 let events = result["hommes"] as? [[String:Any]] else  { return }
@@ -123,7 +126,7 @@ public class WatchService {
     
     public func getPhotosWoman(completion: @escaping ([User]) -> Void) {
         
-        Alamofire.request("http://localhost:3000/api/user/femmes").responseJSON { (res) in
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/femmes").responseJSON { (res) in
             
             guard let result = res.value as? [String:Any],
                 let events = result["femmes"] as? [[String:Any]] else  { return }
@@ -152,7 +155,7 @@ public class WatchService {
             }
         },
                          usingThreshold:UInt64.init(),
-                         to: "http://localhost:3000/api/user/imageSet",
+                         to: "https://quiet-shelf-35572.herokuapp.com/api/user/imageSet",
                          method: .put,
                          encodingCompletion: { encodingResult in
                             completion(encodingResult)

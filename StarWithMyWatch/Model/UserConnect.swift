@@ -17,6 +17,7 @@ public struct UserConnect {
     var gender: String
     let type: String
     var token: String
+    var point: Int
     
     init?(json: [String: Any]) {
         guard let _id = json["_id"] as? String,
@@ -26,7 +27,8 @@ public struct UserConnect {
             let image = json["image"] as? String,
             let gender = json["sex"] as? String,
             let type = json["type"] as? String,
-            let token = json["token"] as? String
+            let token = json["token"] as? String,
+        let point = json["point"] as? Int
             else { return nil }
         self._id = _id
         self.firstName = firstName
@@ -36,10 +38,11 @@ public struct UserConnect {
         self.gender = gender
         self.type = type
         self.token = token
+        self.point = point
         
     }
     
-    init(_id: String, firstName: String, lastName: String, email: String, image:String, gender: String, type: String, token: String) {
+    init(_id: String, firstName: String, lastName: String, email: String, image:String, gender: String, type: String, token: String,point:Int) {
         self._id = _id
         self.firstName = firstName
         self.lastName = lastName
@@ -48,6 +51,7 @@ public struct UserConnect {
         self.gender = gender
         self.type = type
         self.token = token
+        self.point = point
     }
     
 }

@@ -40,8 +40,7 @@ class HomeViewController: UIViewController {
     }
  
     @IBAction func btnSeConnecter(_ sender: UIButton) {
-        
-        WatchService.default.getUser(email: self.identifiantTextField.text!, password: self.mdpTextField.text!, completion: { (user, status) in
+                WatchService.default.getUser(email: self.identifiantTextField.text!, password: self.mdpTextField.text!, completion: { (user, status) in
             if(status == 401) {
                 Toast.show(message: "User non reconnu", controller: self)
             } else {
@@ -49,8 +48,10 @@ class HomeViewController: UIViewController {
                     WatchService.default.getWatchs(completion: { (watchs) in
                         let next = WatchListViewController.newInstance(watchs:watchs, user: user)
                         self.navigationController?.pushViewController(next, animated: true)
+                    
                     })
                 } else {
+                    print("lol")
                     WatchService.default.getPhotosMan(completion: { (photosMen) in
                         WatchService.default.getPhotosWoman(completion: { (photosWomen) in
                             let next = AdminHomeViewController.newInstance(usersMan : photosMen, usersWoman : photosWomen)

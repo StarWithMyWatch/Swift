@@ -19,6 +19,7 @@ class OrderViewController: BasicViewController {
     @IBOutlet var orderCodeTextField: UITextField!
     @IBOutlet var orderPayButton: UIButton!
     @IBOutlet var orderPointsSwitch: UISwitch!
+    @IBOutlet var pointsLabel: UILabel!
     var watch: Watch!
     var user: UserConnect!
     
@@ -42,6 +43,7 @@ class OrderViewController: BasicViewController {
         orderImageView.layer.shadowRadius = 1
         orderImageView.layer.masksToBounds = false
         print(user as UserConnect)
+        pointsLabel.text = "Points: \(user.point)"
         displayData()
         super.viewDidLoad()
 
@@ -71,35 +73,33 @@ class OrderViewController: BasicViewController {
         
 
         if orderPointsSwitch.isOn {
-            
-            print("yayayaya")
-            let params: [String:Any] = [
-                "code": "",
-                "id": self.watch._id
-            ]
-            WatchService.default.paypoints(header: user.token,params: params) { (error, status) in
-                print(status)
-                print(error)
-                if(status == 200){
+            if (user.point > 100) {
+                print("yayayaya")
+                let params: [String:Any] = [
+                    "email": user.email
+                ]
+                WatchService.default.paypoints(header: user.token,params: params) { (error, status) in
+                    print("status",status)
+                    print("error",error)
+                    
                     self.alertStatus(points: true)
-                }else{
-                    Toast.show(message: "il y a une erreur", controller: self)
+                    
                 }
+            }else{
+                Toast.show(message: "Vous n'avez pas assez de points", controller: self)
             }
+            
            
         }else{
-            print("yoyoyo")
+            print(self.orderCodeTextField.text!)
             let params: [String:Any] = [
                 "code": self.orderCodeTextField.text!,
-                "id": self.watch._id
+                "email": user.email
             ]
             WatchService.default.paycash(header: user.token,params: params) { (error, status) in
-                print(status)
-                if(status == 200){
+
                     self.alertStatus(points: false)
-                }else{
-                    Toast.show(message: "il y a une erreur", controller: self)
-                }
+                
             }
         }
     }

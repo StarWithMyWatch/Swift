@@ -14,6 +14,7 @@ class WatchListViewController: BasicViewController {
     var user: UserConnect!
 
     @IBOutlet var watchTableView: UITableView!
+    
     class func newInstance(watchs: [Watch], user: UserConnect) -> WatchListViewController{
         let elvc = WatchListViewController()
         elvc.user = user

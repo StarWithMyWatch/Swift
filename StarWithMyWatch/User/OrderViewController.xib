@@ -18,6 +18,7 @@
                 <outlet property="orderPayButton" destination="ZYy-kB-wJV" id="TmX-CM-A3Q"/>
                 <outlet property="orderPointsSwitch" destination="2hj-3a-QDM" id="LoP-Uj-yK2"/>
                 <outlet property="orderPriceLabel" destination="rSy-eh-96N" id="XlG-33-rsi"/>
+                <outlet property="pointsLabel" destination="1Eq-mj-F0c" id="k8W-2o-8Y4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
