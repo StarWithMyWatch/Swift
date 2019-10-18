@@ -13,6 +13,7 @@ class AdminHomeRecapBisViewController: UIViewController {
     @IBOutlet weak var imageMenOne: UIImageView!
     
     @IBOutlet var reselectImageBtn: UIButton!
+    @IBOutlet weak var validerbtn: UIButton!
     @IBOutlet weak var imageMenTwo: UIImageView!
     @IBOutlet weak var imageWomenOne: UIImageView!
     @IBOutlet weak var imageWomenTwo: UIImageView!
@@ -38,6 +39,9 @@ class AdminHomeRecapBisViewController: UIViewController {
         reselectImageBtn.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         reselectImageBtn.layer.cornerRadius = 0.3 * reselectImageBtn.bounds.size.width
         reselectImageBtn.clipsToBounds = true
+        validerbtn.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
+        validerbtn.layer.cornerRadius = 0.3 * validerbtn.bounds.size.width
+        validerbtn.clipsToBounds = true
 
         imageMenOne.image = UIImage(data: try! Data(contentsOf: URL(string: usersWomenChoosenImage[0])!))
         imageMenTwo.image = UIImage(data: try! Data(contentsOf: URL(string: usersWomenChoosenImage[1])!))
@@ -56,6 +60,11 @@ class AdminHomeRecapBisViewController: UIViewController {
             })
             
         }
+    }
+    
+    
+    @IBAction func validerButton(_ sender: UIButton) {
+        
     }
     
     /*

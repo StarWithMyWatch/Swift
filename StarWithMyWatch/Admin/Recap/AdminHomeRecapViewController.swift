@@ -34,13 +34,13 @@ class AdminHomeRecapViewController: BasicViewController {
     @objc func touchUpload() {
         
         
-        let date = Date().timeIntervalSinceReferenceDate
+        let date = "\(Date().timeIntervalSinceReferenceDate)"
         let params = [
-            "name":"\(date)"
+            "id":"\(user._id)"
         ]
         let image = imageView.image
         if (image != nil) {
-            WatchService.default.uploadImage(params: params, image: image!) { (result) in
+            WatchService.default.uploadImage(params: params, image: image!, name: date) { (result) in
                 print("test")
                 WatchService.default.getWatchs(completion: { (watchs) in
                     let insert = WatchListViewController.newInstance(watchs: watchs, user: self.user)

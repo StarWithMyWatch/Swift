@@ -104,8 +104,8 @@ extension AdminHomeViewController: UICollectionViewDataSource {
             if(doubletapped){
                 cell.imageLike.image = UIImage(named: "coeurFondRouge")
                 doubletapped = false
-                if(!choosenList.contains(usersMen[indexPath.row]._id)){
-                    choosenList.append(usersMen[indexPath.row]._id)
+                if(!choosenList.contains(usersMen[indexPath.row].email)){
+                    choosenList.append(usersMen[indexPath.row].email)
                 }
                 if(!choosenListImage.contains(usersMen[indexPath.row].image)){
                     choosenListImage.append(usersMen[indexPath.row].image)
@@ -115,7 +115,7 @@ extension AdminHomeViewController: UICollectionViewDataSource {
                 cell.imageLike.image = nil
                 longPressure = false
                 choosenList.removeAll { (e) -> Bool in
-                    return e == usersMen[indexPath.row]._id
+                    return e == usersMen[indexPath.row].email
                 }
                 choosenListImage.removeAll { (e) -> Bool in
                     return e == usersMen[indexPath.row].image
@@ -127,7 +127,7 @@ extension AdminHomeViewController: UICollectionViewDataSource {
                 cell.imageLike.image = nil
                 longPressure = false
                 choosenList.removeAll { (e) -> Bool in
-                    return e == usersMen[indexPath.row]._id
+                    return e == usersMen[indexPath.row].email
                 }
                 choosenListImage.removeAll { (e) -> Bool in
                     return e == usersMen[indexPath.row].image

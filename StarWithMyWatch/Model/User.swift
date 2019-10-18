@@ -11,20 +11,23 @@ import Foundation
 public struct User {
     var _id: String
     var image: String
+    var email: String
     
     init?(json: [String: Any]) {
         guard let _id = json["_id"] as? String,
-            let image = json["image"] as? String
+            let image = json["image"] as? String,
+            let email = json["email"] as? String
             else { return nil }
         self._id = _id
         self.image = image
+        self.email = email
         
     }
     
-    init(_id: String, image:String) {
+    init(_id: String, image:String, email: String) {
         self._id = _id
         self.image = image
-        
+        self.email = email
     }
 }
 

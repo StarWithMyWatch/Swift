@@ -132,18 +132,22 @@ public class WatchService {
         
     }
     
-    public func uploadImage(params: [String:String], image: UIImage, completion: @escaping (SessionManager.MultipartFormDataEncodingResult) -> Void) {
+    public func uploadImage(params: [String:String], image: UIImage, name: String, completion: @escaping (SessionManager.MultipartFormDataEncodingResult) -> Void) {
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             if let imageData = image.jpegData(compressionQuality: 1) {
-                guard var imageName = params["name"] else { return }
+                var imageName = name
                 imageName += ".png"
                 print(imageName)
                 multipartFormData.append(imageData, withName: "image", fileName: imageName, mimeType: "image/png")
-            }},
+            }
+            for (key, value) in params {
+                multipartFormData.append((value.data(using: .utf8))!, withName: key)
+            }
+        },
                          usingThreshold:UInt64.init(),
-                         to: "url",
-                         method: .post,
+                         to: "http://localhost:3000/api/user/imageSet",
+                         method: .put,
                          encodingCompletion: { encodingResult in
                             completion(encodingResult)
         })

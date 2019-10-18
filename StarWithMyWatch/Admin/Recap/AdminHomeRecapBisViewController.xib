@@ -17,6 +17,7 @@
                 <outlet property="imageWomenOne" destination="A3t-ZN-rwe" id="oTj-bV-jW9"/>
                 <outlet property="imageWomenTwo" destination="qmD-7o-pyv" id="LP0-fg-2Fd"/>
                 <outlet property="reselectImageBtn" destination="0RE-gl-4dD" id="ldA-JS-Sw6"/>
+                <outlet property="validerbtn" destination="SBj-4b-fui" id="vkk-7p-z3v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -78,17 +79,33 @@
                         <action selector="changeButton:" destination="-1" eventType="touchUpInside" id="f2o-sL-WvY"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBj-4b-fui">
+                    <rect key="frame" x="128" y="749" width="158" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="158" id="jO6-hb-EIZ"/>
+                        <constraint firstAttribute="height" constant="44" id="v9u-Op-CI6"/>
+                    </constraints>
+                    <state key="normal" title="Valider">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="validerButton:" destination="-1" eventType="touchUpInside" id="8zw-ay-P7r"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K9e-IY-lM9" secondAttribute="trailing" id="0yt-Ke-oYL"/>
                 <constraint firstItem="qmD-7o-pyv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Tr-q7-gPv"/>
                 <constraint firstItem="A3t-ZN-rwe" firstAttribute="top" secondItem="zhh-A6-wV1" secondAttribute="bottom" constant="20" id="4mJ-h0-Brn"/>
+                <constraint firstItem="SBj-4b-fui" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4mZ-ap-wPN"/>
                 <constraint firstItem="ptv-EH-ORm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6T9-d3-4nr"/>
                 <constraint firstItem="K9e-IY-lM9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hvp-6f-Rye"/>
                 <constraint firstItem="A3t-ZN-rwe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KOk-QX-hkE"/>
                 <constraint firstItem="zhh-A6-wV1" firstAttribute="top" secondItem="K3z-LV-kJK" secondAttribute="bottom" constant="40" id="N1z-nk-BAa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zhh-A6-wV1" secondAttribute="trailing" id="Rzk-wM-4bl"/>
+                <constraint firstItem="SBj-4b-fui" firstAttribute="top" secondItem="0RE-gl-4dD" secondAttribute="bottom" constant="20" id="S19-6F-DVN"/>
                 <constraint firstItem="0RE-gl-4dD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="128" id="UJ1-VZ-fGS"/>
                 <constraint firstItem="K3z-LV-kJK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WCn-7b-11G"/>
                 <constraint firstItem="zhh-A6-wV1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fJq-L9-rXK"/>
