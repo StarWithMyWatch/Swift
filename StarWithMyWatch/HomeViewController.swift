@@ -41,20 +41,25 @@ class HomeViewController: UIViewController {
  
     @IBAction func btnSeConnecter(_ sender: UIButton) {
         
-        WatchService.default.getUser(email: self.identifiantTextField.text!, password: self.mdpTextField.text!, completion: { (user) in
-            if user.type == "user" {
-                WatchService.default.getWatchs(completion: { (watchs) in
-                    let next = WatchListViewController.newInstance(watchs:watchs, user: user)
-                    self.navigationController?.pushViewController(next, animated: true)
-                })
+        WatchService.default.getUser(email: self.identifiantTextField.text!, password: self.mdpTextField.text!, completion: { (user, status) in
+            if(status == 401) {
+                Toast.show(message: "User non reconnu", controller: self)
             } else {
-                WatchService.default.getPhotosMan(completion: { (photosMen) in
-                    WatchService.default.getPhotosWoman(completion: { (photosWomen) in
-                        let next = AdminHomeViewController.newInstance(usersMan : photosMen, usersWoman : photosWomen)
+                if user.type == "user" {
+                    WatchService.default.getWatchs(completion: { (watchs) in
+                        let next = WatchListViewController.newInstance(watchs:watchs, user: user)
                         self.navigationController?.pushViewController(next, animated: true)
                     })
-                })
+                } else {
+                    WatchService.default.getPhotosMan(completion: { (photosMen) in
+                        WatchService.default.getPhotosWoman(completion: { (photosWomen) in
+                            let next = AdminHomeViewController.newInstance(usersMan : photosMen, usersWoman : photosWomen)
+                            self.navigationController?.pushViewController(next, animated: true)
+                        })
+                    })
+                }
             }
+            
         })
             
         

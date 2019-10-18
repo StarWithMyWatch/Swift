@@ -38,7 +38,7 @@ public class WatchService {
         }
     }
     
-    public func getUser(email: String, password: String, completion: @escaping (UserConnect) -> Void) {
+    public func getUser(email: String, password: String, completion: @escaping (UserConnect,Int) -> Void) {
         
         let params = [
             "email": email,
@@ -47,8 +47,13 @@ public class WatchService {
         
         Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/login", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { (res) in
             
-            //print("hehe\(res)")
+            print("hehe\(res.response!.statusCode)")
+            if ((res.response!.statusCode as? Int) == 401){
+                completion(UserConnect(_id: "er", firstName: "er", lastName: "er", email: "er", image: "er", gender: "er", type: "er", token: "er"), (res.response!.statusCode as? Int)!)
+            }
+            
             guard let result = res.value as? [String:Any],
+                let status = res.response?.statusCode,
                 let token = result["token"] as? String,
                 let user = result["user"] as? [String:Any],
                 let id = user["_id"] as? String,
@@ -57,10 +62,10 @@ public class WatchService {
                 let email = user["email"] as? String,
                 let type = user["type"] as? String,
                 let gender = user["sex"] as? String else {return}
-            print(email)
+            print(status)
             
             let newUser = UserConnect(_id: id, firstName: firstName, lastName: lastName, email: email, image: "", gender: gender, type: type, token: token)
-            completion(newUser)
+            completion(newUser, status)
             
             
         }
@@ -103,10 +108,10 @@ public class WatchService {
     
     public func getPhotosMan(completion: @escaping ([User]) -> Void) {
         
-        Alamofire.request("https://demo2421622.mockable.io/homme").responseJSON { (res) in
+        Alamofire.request("http://localhost:3000/api/user/hommes").responseJSON { (res) in
             
             guard let result = res.value as? [String:Any],
-                let events = result["users"] as? [[String:Any]] else  { return }
+                let events = result["hommes"] as? [[String:Any]] else  { return }
             let eventsResult = events.compactMap({ (elem) -> User? in
                 return User(json: elem)
             })
@@ -118,10 +123,11 @@ public class WatchService {
     
     public func getPhotosWoman(completion: @escaping ([User]) -> Void) {
         
-        Alamofire.request("https://demo2421622.mockable.io/femme").responseJSON { (res) in
+        Alamofire.request("http://localhost:3000/api/user/femmes").responseJSON { (res) in
             
             guard let result = res.value as? [String:Any],
-                let events = result["users"] as? [[String:Any]] else  { return }
+                let events = result["femmes"] as? [[String:Any]] else  { return }
+            print(events)
             let eventsResult = events.compactMap({ (elem) -> User? in
                 return User(json: elem)
             })
@@ -165,6 +171,21 @@ public class WatchService {
         
         Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/signup", method: .post, parameters: params, encoding: JSONEncoding.default).responseString { (res) in
             print(res)
+            //completion(res.response?.statusCode == 201)
+        }
+    }
+    
+    public func chooseStar(emailMen: [String], emailWomen: [String]) {
+        
+        let params = [
+            "emailMenOne": emailMen[0],
+            "emailMenTwo": emailMen[1],
+            "emailWomenOne": emailWomen[0],
+            "emailWomenTwo": emailWomen[1]
+            ] as [String : Any]
+        
+        Alamofire.request("https://quiet-shelf-35572.herokuapp.com/api/user/star", method: .put, parameters: params, encoding: JSONEncoding.default).responseString { (res) in
+            print("Reponse json \(res)")
             //completion(res.response?.statusCode == 201)
         }
     }

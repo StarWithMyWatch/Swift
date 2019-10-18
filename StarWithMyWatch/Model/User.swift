@@ -14,8 +14,8 @@ public struct User {
     var email: String
     
     init?(json: [String: Any]) {
-        guard let _id = json["_id"] as? String,
-            let image = json["image"] as? String,
+        guard let _id = json["id"] as? String,
+            let image = json["photo"] as? String,
             let email = json["email"] as? String
             else { return nil }
         self._id = _id

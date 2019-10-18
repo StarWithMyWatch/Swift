@@ -40,13 +40,13 @@ class AdminHomeRecapViewController: BasicViewController {
         ]
         let image = imageView.image
         if (image != nil) {
-            WatchService.default.uploadImage(params: params, image: image!, name: date) { (result) in
+            //WatchService.default.uploadImage(params: params, image: image!, name: date) { (result) in
                 print("test")
                 WatchService.default.getWatchs(completion: { (watchs) in
                     let insert = WatchListViewController.newInstance(watchs: watchs, user: self.user)
                     self.navigationController?.pushViewController(insert, animated: true)
                 })
-            }
+            //}
         }else{
             Toast.show(message: "Veillez sélectionner une image ", controller: self)
         }
