@@ -45,6 +45,7 @@ class OrderViewController: BasicViewController {
         print(user as UserConnect)
         pointsLabel.text = "Points: \(user.point)"
         displayData()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logout))
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -52,8 +53,13 @@ class OrderViewController: BasicViewController {
     
     func displayData(){
         let imageURL = URL(string: watch.image)
-        let imageData = try! Data(contentsOf: imageURL!)
-        self.orderImageView.image = UIImage(data: imageData)
+        do {
+            let imageData = try Data(contentsOf: imageURL!)
+            self.orderImageView.image = UIImage(data: imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         self.orderNameLabel.text = self.watch.nom
         self.orderPriceLabel.text = "Prix: \(self.watch.prix)€"
         
@@ -138,6 +144,11 @@ class OrderViewController: BasicViewController {
             self.present(alert, animated: true)
         }
         
+    }
+    
+    @objc func logout() {
+        let insert = HomeViewController.newInstance()
+        self.navigationController?.pushViewController(insert, animated: true)
     }
     /*
     // MARK: - Navigation

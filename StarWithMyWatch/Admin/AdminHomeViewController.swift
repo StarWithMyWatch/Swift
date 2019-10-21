@@ -118,8 +118,13 @@ extension AdminHomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdminHomeViewController.adminCellId, for: indexPath) as! AdminHomeCollectionViewCell
         let urlImage = URL(string: usersMen[indexPath.row].image)
-        let imageData = try! Data(contentsOf: urlImage!)
-        cell.image.image = UIImage(data: imageData)
+        do {
+            let imageData = try Data(contentsOf: urlImage!)
+            cell.image.image = UIImage(data: imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         
         if(choosenList.count < 2) {
             if(doubletapped){

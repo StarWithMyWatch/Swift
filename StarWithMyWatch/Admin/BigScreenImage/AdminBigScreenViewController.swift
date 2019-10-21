@@ -25,8 +25,13 @@ class AdminBigScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let urlImage = URL(string: image)
-        let imageData = try! Data(contentsOf: urlImage!)
-        bigScreenImageView.image = UIImage(data: imageData)
+        do {
+            let imageData = try Data(contentsOf: urlImage!)
+            bigScreenImageView.image = UIImage(data: imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         emailLabel.text = email
         // Do any additional setup after loading the view.
     }

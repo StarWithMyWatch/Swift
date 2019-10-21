@@ -28,12 +28,20 @@ class WatchListViewController: BasicViewController {
         self.watchTableView.dataSource = self
         self.watchTableView.register(UINib(nibName: "WatchListTableViewCell", bundle: nil), forCellReuseIdentifier: WatchListViewController.watchCellId)
         self.navigationItem.setHidesBackButton(true, animated:true);
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchUpload))
+        let rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchUpload))
+        let logoutAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logout))
+        self.navigationItem.setRightBarButtonItems([logoutAddBarButtonItem, rightAddBarButtonItem], animated: true)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchUpload))
 
     }
     
     @objc func touchUpload() {
         let insert = AdminHomeRecapViewController.newInstance(user: self.user)
+        self.navigationController?.pushViewController(insert, animated: true)
+    }
+    
+    @objc func logout() {
+        let insert = HomeViewController.newInstance()
         self.navigationController?.pushViewController(insert, animated: true)
     }
 
@@ -56,8 +64,12 @@ extension WatchListViewController: UITableViewDataSource {
         
         let watch = watchs[indexPath.row]
         let imageURL = URL(string: watch.image)
-        let imageData = try! Data(contentsOf: imageURL!)
-        cell.watchImageView.image = UIImage(data: imageData)
+        do {
+            let imageData = try Data(contentsOf: imageURL!)
+            cell.watchImageView.image = UIImage(data: imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
         
         cell.watchPriceLabel.text = "\(watch.prix)€"
     

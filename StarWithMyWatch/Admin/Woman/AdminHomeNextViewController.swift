@@ -41,6 +41,7 @@ class AdminHomeNextViewController: BasicViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Finaliser", style: .done, target: self, action: #selector(nextPage))
         self.navigationItem.setHidesBackButton(true, animated:true);
         
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.doubleTapped(gesture:)))
         tap.numberOfTapsRequired = 2
         adminHomeNextCollectionView.addGestureRecognizer(tap)
@@ -114,8 +115,13 @@ extension AdminHomeNextViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdminHomeViewController.adminCellId, for: indexPath) as! AdminHomeCollectionViewCell
         let urlImage = URL(string: usersWomen[indexPath.row].image)
-        let imageData = try! Data(contentsOf: urlImage!)
-        cell.image.image = UIImage(data: imageData)
+        do {
+            let imageData = try Data(contentsOf: urlImage!)
+            cell.image.image = UIImage(data: imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         if(choosenListWomen.count < 2) {
             if(doubletapped){
                 cell.imageLike.image = UIImage(named: "coeurFondRouge")

@@ -38,6 +38,8 @@ class WatchDetailViewController: BasicViewController {
         detailImageView.layer.shadowRadius = 1
         detailImageView.layer.masksToBounds = false
         displayData()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logout))
 
         super.viewDidLoad()
 
@@ -46,8 +48,13 @@ class WatchDetailViewController: BasicViewController {
     
     func displayData(){
         let imageURL = URL(string: watch.image)
-        let imageData = try! Data(contentsOf: imageURL!)
-        self.detailImageView.image = UIImage(data: imageData)
+        do {
+            let imageData = try Data(contentsOf: imageURL!)
+            self.detailImageView.image = UIImage(data: imageData)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         self.detailNameLabel.text = self.watch.nom
         self.detailDescTextView.text = self.watch.desc
         self.detailPriceLabel.text = "\(self.watch.prix)€"
@@ -56,6 +63,11 @@ class WatchDetailViewController: BasicViewController {
     @IBAction func detailOrderButton(_ sender: Any) {
         let watch = OrderViewController.newInstance(watch: self.watch, user: self.user)
         self.navigationController?.pushViewController(watch, animated: true)
+    }
+    
+    @objc func logout() {
+        let insert = HomeViewController.newInstance()
+        self.navigationController?.pushViewController(insert, animated: true)
     }
     
 

@@ -49,6 +49,8 @@ class AdminHomeRecapBisViewController: UIViewController {
         imageWomenOne.image = UIImage(data: try! Data(contentsOf: URL(string: usersMenChoosenImage[0])!))
         imageWomenTwo.image = UIImage(data: try! Data(contentsOf: URL(string: usersMenChoosenImage[1])!))
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(logout))
+        
        
     }
 
@@ -82,6 +84,11 @@ class AdminHomeRecapBisViewController: UIViewController {
             }
         })
         
+    }
+    
+    @objc func logout() {
+        let insert = HomeViewController.newInstance()
+        self.navigationController?.pushViewController(insert, animated: true)
     }
     
     /*
